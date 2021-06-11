@@ -4,13 +4,18 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import eu.tutorials.evepeeve.BaseActivity
 import eu.tutorials.evepeeve.Models.Students
 
-class DatabaseManagement {
+class DatabaseManagement:BaseActivity() {
     private val firestore = FirebaseFirestore.getInstance()
     private val firebaseAuth = FirebaseAuth.getInstance()
     fun registerStudentInFirestore(userInfo: Students) {
         firestore.collection(eu.tutorials.evepeeve.utils.Constants.studentsDb).document(userInfo.id).set(userInfo, SetOptions.merge())
+            .addOnSuccessListener { it->
+
+
+            }
     }
     fun registerStudentForAuthorization(userInfo:Students)
     {

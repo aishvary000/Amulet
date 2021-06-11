@@ -15,20 +15,23 @@ class StudentSignup : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_signup)
+        sign_up_btn.setOnClickListener {
+            registerUser()
+        }
     }
 
     private fun registerUser() {
-        var userName: String = st_username.text.toString().trim()
+        var userName: String = st_username.text.toString()
         var password: String = st_password.text.toString()
         var againPass: String = st_confirm.text.toString()
         var email: String = st_email.text.toString()
         if (validate(userName, email, password, againPass, this)) {
             DatabaseManagement().registerStudentForAuthorization(
                 Students(
-                    userName,
-                    email,
-                    "False",
-                    password
+                    name = userName,
+                    email = email,
+                    admin = "false",
+                    password = password
                 )
             )
 
