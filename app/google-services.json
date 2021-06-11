@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "20588478237",
+    "project_id": "evepeeve-731b6",
+    "storage_bucket": "evepeeve-731b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:20588478237:android:b92cdbc623c412ffcaebf4",
+        "android_client_info": {
+          "package_name": "eu.tutorials.evepeeve"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "20588478237-u16s94d74b2olnnu2er36fnr7g6l3sfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkf2hg22nJMQNJIasFJf4VCrFh-EXemZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "20588478237-u16s94d74b2olnnu2er36fnr7g6l3sfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
