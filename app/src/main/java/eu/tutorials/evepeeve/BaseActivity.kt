@@ -18,7 +18,24 @@ open class BaseActivity : AppCompatActivity() {
             Toast.makeText(context,"User Name Can't be empty",Toast.LENGTH_SHORT).show()
             return false
         }
-        
+        if(email.isEmpty())
+        {
+            Toast.makeText(context,"Email field can't be empty",Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if(password.isEmpty())
+        {
+            Toast.makeText(context,"Password field can't be empty",Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if(password != againPass)
+        {
+            Toast.makeText(context,"Password Doesn't match Try again",Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
+
+
 
 
     }
