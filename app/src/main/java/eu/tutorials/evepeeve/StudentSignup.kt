@@ -16,18 +16,23 @@ class StudentSignup : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_signup)
     }
+
     private fun registerUser() {
-        var userName:String = st_username.text.toString()
-        var password:String = st_password.text.toString()
-        var againPass:String = st_confirm.text.toString()
-        var email:String  = st_email.text.toString()
-        if(validate(userName,email,password,againPass,this))
-        {
-                DatabaseManagement().registerStudentForAuthorization(Students(userName,email,"False",password))
+        var userName: String = st_username.text.toString().trim()
+        var password: String = st_password.text.toString()
+        var againPass: String = st_confirm.text.toString()
+        var email: String = st_email.text.toString()
+        if (validate(userName, email, password, againPass, this)) {
+            DatabaseManagement().registerStudentForAuthorization(
+                Students(
+                    userName,
+                    email,
+                    "False",
+                    password
+                )
+            )
 
         }
 
     }
-
-    private  fun
-    }
+}

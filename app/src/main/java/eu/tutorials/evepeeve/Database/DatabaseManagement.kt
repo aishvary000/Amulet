@@ -1,4 +1,5 @@
 package eu.tutorials.evepeeve.Database
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
@@ -23,6 +24,9 @@ class DatabaseManagement {
                 //registering for firebase
                 registerStudentInFirestore(userInfo)
         }
+            .addOnFailureListener{it->
+                Log.e("this",it.toString())
+            }
     }
 
 }
