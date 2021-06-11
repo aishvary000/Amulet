@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
 
 
 
@@ -14,20 +16,25 @@
           android:layout_height="match_parent"
           android:orientation="vertical"
        android:gravity="center">
-         <ImageButton
+
+
+       <ImageButton
+           android:background="@color/teal_200"
              android:id="@+id/student_button"
              android:layout_width="200dp"
              android:layout_height="wrap_content"
-             android:layout_margin="10dp"
+             android:layout_marginRight= "10dp"
              android:layout_gravity="center"
-             android:src="@drawable/graduated_200x200" />
+             android:src="@drawable/graduated_200x200"
+           />
          <TextView
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="STUDENT"
              android:gravity="center"
+             android:textSize="20dp"
              android:textStyle="bold"
-             android:textColor="@color/black"/>
+             android:textColor="@color/white"/>
 
 
       </LinearLayout>
@@ -37,19 +44,21 @@
        android:orientation="vertical"
        android:gravity="center">
       <ImageButton
+          android:background="@color/teal_200"
           android:id="@+id/faculty_button"
           android:layout_width="200dp"
           android:layout_height="wrap_content"
-          android:layout_margin="10dp"
           android:layout_gravity="center"
-          android:src="@drawable/classroom_200x200" />
+          android:src="@drawable/classroom_200x200"
+          />
       <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="TEACHER"
           android:gravity="center"
+          android:textSize="20dp"
           android:textStyle="bold"
-          android:textColor="@color/black"/>
+          android:textColor="@color/white"/>
 
 
    </LinearLayout>
