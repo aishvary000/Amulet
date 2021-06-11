@@ -13,17 +13,17 @@ open class BaseActivity : AppCompatActivity() {
 
     fun validate(userName:String,email:String,password:String,againPass:String,context:Context):Boolean{
 
-        if(userName.isEmpty())
+        if(userName=="")
         {
             Toast.makeText(context,"User Name Can't be empty",Toast.LENGTH_SHORT).show()
             return false
         }
-        if(email.isEmpty())
+        if(email=="")
         {
             Toast.makeText(context,"Email field can't be empty",Toast.LENGTH_SHORT).show()
             return false
         }
-        if(password.isEmpty())
+        if(password=="")
         {
             Toast.makeText(context,"Password field can't be empty",Toast.LENGTH_SHORT).show()
             return false

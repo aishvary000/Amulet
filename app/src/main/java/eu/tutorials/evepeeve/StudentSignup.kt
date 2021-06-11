@@ -29,5 +29,5 @@ class StudentSignup : BaseActivity() {
 
     }
 
-    private  fun
+
     }
