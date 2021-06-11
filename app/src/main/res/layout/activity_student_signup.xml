@@ -7,12 +7,23 @@
     tools:context=".StudentSignup"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#413E4F"
     >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Create A New Account!"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/st_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColorHint="@color/white"
         android:hint="Username"
         />
     <EditText
@@ -21,12 +32,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Email"
+        android:textColorHint="@color/white"
         />
     <EditText
         android:id="@+id/st_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColorHint="@color/white"
         android:hint="Password"
         />
     <EditText
@@ -34,6 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColorHint="@color/white"
         android:hint="Confirm password"
         />
     <Button
@@ -42,7 +56,18 @@
         android:layout_marginTop="10dp"
         android:text="Sign Up"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_700"/>
+    <Button
+        android:id="@+id/log_in_link"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:text="Already a member?Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#413E4f"/>
+
+
 
 
 
