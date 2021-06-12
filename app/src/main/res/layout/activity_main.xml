@@ -4,66 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@color/black">
+    android:gravity="center"
+    android:padding="45dp"
+    android:background="@drawable/gradient">
 
 
 
 
-   <LinearLayout
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:orientation="vertical"
-       android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Welcome..."
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
 
+            />
 
-       <ImageButton
-           android:background="@color/teal_200"
-             android:id="@+id/student_button"
-             android:layout_width="200dp"
-             android:layout_height="wrap_content"
-             android:layout_marginRight= "10dp"
-             android:layout_gravity="center"
-             android:src="@drawable/graduated_200x200"
-           />
-         <TextView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:text="STUDENT"
-             android:gravity="center"
-             android:textSize="20dp"
-             android:textStyle="bold"
-             android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Login Please "
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/white">
 
-      </LinearLayout>
-   <LinearLayout
-       android:layout_width="wrap_content"
-       android:layout_height="match_parent"
-       android:orientation="vertical"
-       android:gravity="center">
-      <ImageButton
-          android:background="@color/teal_200"
-          android:id="@+id/faculty_button"
-          android:layout_width="200dp"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          android:src="@drawable/classroom_200x200"
-          />
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="TEACHER"
-          android:gravity="center"
-          android:textSize="20dp"
-          android:textStyle="bold"
-          android:textColor="@color/white"/>
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Id"
+                android:textColor="#363A43"
+                android:textColorHint="#7A8089"
+                android:textStyle="bold" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
-   </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
 
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textStyle="bold" />
 
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:text="Login" />
+    <Button
+        android:id="@+id/btn_newuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#7FF6F4"
+        android:textColor="#000087"
+        android:textStyle="bold"
+        android:text="Not an existing user? Sign up" />
 
 
 

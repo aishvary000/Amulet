@@ -10,12 +10,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        student_button.setOnClickListener {
-            val intent = Intent(this,StudentSignup::class.java)
-            startActivity(intent)
-            finish()
-        }
-        faculty_button.setOnClickListener {
+
+        btn_newuser.setOnClickListener {
             val intent = Intent(this,FacultySignup::class.java)
             startActivity(intent)
             finish()
