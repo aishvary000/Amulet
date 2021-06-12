@@ -11,20 +11,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="180dp">
-
     </LinearLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-
-        android:layout_marginHorizontal="35dp"
+        android:layout_marginHorizontal="5dp"
         app:cardCornerRadius="30dp"
+        android:layout_gravity="center"
         app:cardElevation="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:gravity="center"
             android:padding="15dp">
         <TextView
             android:layout_width="match_parent"
@@ -91,12 +90,14 @@
 
         <Button
             android:id="@+id/btn_login"
+            android:gravity="center"
             android:layout_marginHorizontal="45dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/black"
-            android:text="Login" />
+            android:backgroundTint="#e75480"
+            android:text="Login"
+            android:textColor="@color/white"/>
     <Button
         android:id="@+id/btn_newuser"
         android:layout_width="match_parent"
@@ -120,11 +121,11 @@
 
         <Button
             android:id="@+id/admin_login"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="45dp"
             android:layout_marginTop="100dp"
-            android:backgroundTint="@color/dark_blue"
+            android:backgroundTint="#e75480"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:text="Login as Admin">
@@ -132,10 +133,5 @@
         </Button>
 
     </LinearLayout>
-
-
-
-
-
 
 </LinearLayout>
