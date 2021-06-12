@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:gravity="center"
-    android:padding="45dp"
     android:background="@drawable/gradient">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
 
-
-
-
+    </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="45dp"
             android:background="@color/white">
 
             <androidx.appcompat.widget.AppCompatEditText
@@ -56,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="45dp"
             android:background="@color/white">
 
             <androidx.appcompat.widget.AppCompatEditText
@@ -71,6 +72,7 @@
 
         <Button
             android:id="@+id/btn_login"
+            android:layout_marginHorizontal="45dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -83,9 +85,32 @@
         android:textAllCaps="false"
         android:layout_marginTop="16dp"
         android:backgroundTint="#7FF6F4"
-        android:textColor="#000087"
+        android:textColor="@color/dark_blue"
         android:textStyle="bold"
         android:text="Not an existing user? Sign up" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="45dp"
+            android:layout_marginTop="150dp"
+            android:backgroundTint="@color/dark_blue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="Login as Admin">
+
+        </Button>
+
+    </LinearLayout>
+
+
 
 
 
