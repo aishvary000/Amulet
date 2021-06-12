@@ -12,7 +12,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_newuser.setOnClickListener {
-            val intent = Intent(this,FacultySignup::class.java)
+            val intent = Intent(this,StudentSignup::class.java)
+            startActivity(intent)
+            finish()
+        }
+        admin_login.setOnClickListener {
+            val intent = Intent(this,AdminLogin::class.java)
             startActivity(intent)
             finish()
         }
