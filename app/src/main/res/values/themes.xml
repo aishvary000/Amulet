@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Evepeeve" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#FFB6C1</item>
-        <item name="colorPrimaryVariant">#FFB6C1</item>
+        <item name="colorPrimary">#e75480</item>
+        <item name="colorPrimaryVariant">#e75480</item>
         <item name="colorOnPrimary">#696969</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

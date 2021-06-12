@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:gravity="center"
-    android:background="@drawable/greenbeach"
+    android:background="#C0C0C0"
     tools:context=".FacultySignup">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -179,6 +179,8 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:text="SIGN UP"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:id="@+id/faculy_signup"/>
 
 
