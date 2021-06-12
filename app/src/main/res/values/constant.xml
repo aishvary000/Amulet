@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="StudentsDatabse">StudentsDatabse</string>
+    <string name="custom_toast_size">20sp</string>
 
 </resources>
