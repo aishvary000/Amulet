@@ -1,5 +1,6 @@
 package eu.tutorials.evepeeve
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -13,23 +14,18 @@ class AdminLogin : BaseActivity() {
         setContentView(R.layout.activity_admin_login)
         Listeners()
     }
-    fun adminoptions(v:View){
-        if(AdminLoginEmailText.text.toString()==""||AdminLoginPasswordText.text.toString()==""){
-            Toast.makeText(this,"Email can't be empty",Toast.LENGTH_SHORT).show()
-        }
-        else{
-        val intent = Intent(this,AdminOptions::class.java)
-        startActivity(intent)
-        }
-    }
+
     fun adminLogin(v: View)
     {
+
         val email:String = AdminLoginEmailText.text.toString()
         var password:String = AdminLoginPasswordText.text.toString()
         if(validateForLogin(email,password,this))
             {
-                        DatabaseManagement().loginAdmin(email,password)
+                        DatabaseManagement().loginAdmin(email,password,AdminLogin(),this)
             }
+        else
+            Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()
     }
     fun Listeners()
     {

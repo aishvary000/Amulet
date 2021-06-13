@@ -1,5 +1,6 @@
 package eu.tutorials.evepeeve.Database
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -11,12 +12,11 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firestore.v1.ListenResponse
-import eu.tutorials.evepeeve.BaseActivity
+import eu.tutorials.evepeeve.*
 import eu.tutorials.evepeeve.Models.Admin
 import eu.tutorials.evepeeve.Models.Students
-import eu.tutorials.evepeeve.R
-import eu.tutorials.evepeeve.StudentSignup
 import kotlinx.android.synthetic.main.custom_toast.*
+import java.lang.Exception
 
 class DatabaseManagement:BaseActivity() {
     private val firestore = FirebaseFirestore.getInstance()
@@ -50,14 +50,24 @@ class DatabaseManagement:BaseActivity() {
                 Log.e("this", it.toString())
             }
     }
-    fun loginAdmin(email:String,password:String)
+    fun loginAdmin(email:String,password:String,context:AdminLogin)
     {
         firebaseAuth.signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {it->
-                    Log.e("OKidoki",it.toString())
-                    firestore.collection("admin").document(it.user?.uid.toString()).get()
+
+                    firestore.collection("admin").document(getCurrentUserId()).get()
                         .addOnSuccessListener {it1->
                             Log.e("hello ",it1.toString())
+                            try{
+                                var intent:Intent = Intent( context,AdminOptions::class.java)
+                                context.startActivity(intent)
+                            }
+                            catch (e:Exception)
+                            {
+                                Log.e("HEre ",e.toString())
+
+                            }
+
                         }
                         .addOnFailureListener {
                             Log.e("error ",it.toString())
@@ -69,6 +79,7 @@ class DatabaseManagement:BaseActivity() {
 
 
     }
+
 
 
 }

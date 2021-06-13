@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_student_signup.*
 import kotlinx.android.synthetic.main.custom_toast.*
 
@@ -30,7 +31,7 @@ open class BaseActivity : AppCompatActivity() {
             Toast.makeText(context,"Minimum Password size is 8",Toast.LENGTH_SHORT).show()
             return false
         }
-        return false
+        return true
     }
 
     fun validateForRegister(userName:String,email:String,password:String,againPass:String,context:Context):Boolean{
@@ -137,6 +138,13 @@ open class BaseActivity : AppCompatActivity() {
     fun showErrorSnackBar(message:String)
     {
 
+    }
+    fun getCurrentUserId(): String {
+        var currentUserId = ""
+        var currentUser = FirebaseAuth.getInstance().currentUser
+        if(currentUser!=null)
+            currentUserId = currentUser.uid
+        return currentUserId
     }
 
 
