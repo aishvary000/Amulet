@@ -18,7 +18,7 @@ class MainActivity : BaseActivity() {
 
 
     }
-    fun Listeners()
+    private fun Listeners()
     {
         validateLocally("Email",mainActivityLoginEmailText,mainActivityLoginEmailField)
         validateLocally("Password",mainActivityLoginPasswordText,mainActivityLoginPasswordField)
