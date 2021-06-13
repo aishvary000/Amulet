@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Success">	#00FF00	</color>
     <color name="dark_blue">#000087</color>
+    <color name="outlinedBoxDeafaultColor">#585858</color>
 </resources>

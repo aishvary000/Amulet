@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // dumbo log dumbo hi rhenge
+
 //        btn_newuser.setOnClickListener {
 //            val intent = Intent(this,FacultySignup::class.java)
 //            startActivity(intent)
