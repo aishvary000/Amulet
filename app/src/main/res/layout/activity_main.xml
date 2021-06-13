@@ -117,7 +117,8 @@
                     android:textSize="16sp"
                     android:textAllCaps="false"
                     android:text="Login"
-                    android:padding="20dp"/>
+                    android:padding="20dp"
+                    />
 
             </androidx.cardview.widget.CardView>
         </LinearLayout>
@@ -136,6 +137,8 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:textAllCaps="false"
+            android:clickable="true"
+            android:onClick="student_signup"
             android:text="Sign up as User"
             android:padding="20dp"/>
 
@@ -157,8 +160,9 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:text="Login As Admin"
+            android:clickable="true"
+            android:onClick="perform_action"
             android:padding="20dp"/>
-
     </androidx.cardview.widget.CardView>
 
 
