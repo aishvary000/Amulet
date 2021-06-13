@@ -1,15 +1,12 @@
 package eu.tutorials.evepeeve
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import androidx.constraintlayout.motion.widget.TransitionBuilder.validate
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import eu.tutorials.evepeeve.Models.Students
 import eu.tutorials.evepeeve.Database.DatabaseManagement
 import kotlinx.android.synthetic.main.activity_student_signup.*
@@ -20,17 +17,31 @@ class StudentSignup : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_signup)
+        listeners()
+
+
 
     }
+
+    fun listeners()
+    {
+        validateLocally("UserName",StudentSignUpUserNameText,StudentSignUpUserNameField)
+        validateLocally("Email",StudentSignUpEmailText,StudentSignUpEmailField)
+        validateLocally("Password",StudentSignUpPasswordText,StudentSignUpPasswordField)
+        validateLocally("ConfirmPassword",StudentSignUpConfirmPasswordText,StudentSignUpConfirmPasswordField)
+
+
+    }
+
     fun signup(v:View){
         registerUser()
     }
 
     private fun registerUser() {
-        val userName: String = st_username.toString()
-        var password: String = st_password.toString()
-        var againPass: String = st_confirm.toString()
-        var email: String = st_email.toString()
+        val userName: String = StudentSignUpUserNameText.text.toString()
+        var password: String = StudentSignUpPasswordText.text.toString()
+        var againPass: String = StudentSignUpConfirmPasswordText.text.toString()
+        var email: String = StudentSignUpEmailText.text.toString()
         if (validate(userName, email, password, againPass, this)) {
             DatabaseManagement().registerStudentForAuthorization(
 
@@ -55,5 +66,6 @@ class StudentSignup : BaseActivity() {
         toast.view = layout
         toast.show()
     }
+
 
 }
