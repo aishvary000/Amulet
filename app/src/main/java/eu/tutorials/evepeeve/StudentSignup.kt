@@ -20,42 +20,40 @@ class StudentSignup : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_signup)
-//        sign_up_btn.setOnClickListener {
-//            registerUser()
-//
-//        }
 
     }
+    fun signup(v:View){
+        registerUser()
+    }
 
+    private fun registerUser() {
+        val userName: String = st_username.toString()
+        var password: String = st_password.toString()
+        var againPass: String = st_confirm.toString()
+        var email: String = st_email.toString()
+        if (validate(userName, email, password, againPass, this)) {
+            DatabaseManagement().registerStudentForAuthorization(
 
-//    private fun registerUser() {
-//        val userName: String = st_username.text.toString()
-//        var password: String = st_password.text.toString()
-//        var againPass: String = st_confirm.text.toString()
-//        var email: String = st_email.text.toString()
-//        if (validate(userName, email, password, againPass, this)) {
-//            DatabaseManagement().registerStudentForAuthorization(
-//
-//                Students(
-//                    name = userName,
-//                    email = email,
-//                    admin = "false",
-//                    password = password
-//                ),this
-//            )
-//
-//        }
-//
-//    }
-//    fun showSucessToast(message:String)
-//    {
-//        var inflater: LayoutInflater = LayoutInflater.from(this)
-//        var layout: View = inflater.inflate(R.layout.custom_toast,customll)
-//        layout.custom_Toast_text_Success.text = message
-//        var toast:Toast = Toast(applicationContext)
-//        toast.setGravity(Gravity.BOTTOM,Gravity.CENTER,10)
-//        toast.view = layout
-//        toast.show()
-//    }
+                Students(
+                    name = userName,
+                    email = email,
+                    admin = "false",
+                    password = password
+                ),this
+            )
+
+        }
+
+    }
+    fun showSucessToast(message:String)
+    {
+        var inflater: LayoutInflater = LayoutInflater.from(this)
+        var layout: View = inflater.inflate(R.layout.custom_toast,customll)
+        layout.custom_Toast_text_Success.text = message
+        var toast:Toast = Toast(applicationContext)
+        toast.setGravity(Gravity.BOTTOM,Gravity.CENTER,10)
+        toast.view = layout
+        toast.show()
+    }
 
 }
