@@ -15,29 +15,16 @@ class MainActivity : AppCompatActivity() {
 
         // dumbo log dumbo hi rhenge
 
-//        btn_newuser.setOnClickListener {
-//            val intent = Intent(this,FacultySignup::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-//        admin_login.setOnClickListener {
-//            val intent = Intent(this,AdminLogin::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-
-
-
     }
     fun student_signup(v: View){
         val intent = Intent(this, StudentSignup::class.java)
         startActivity(intent)
-        finish()
+
 
     }
     fun perform_action(v:View){
         val intent = Intent(this,AdminLogin::class.java)
         startActivity(intent)
-        finish()
+
     }
 }
