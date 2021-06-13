@@ -41,14 +41,14 @@
                     android:layout_width="match_parent"
                     android:hint="User Name"
                     android:padding="7dp"
-
+                    android:id="@+id/FacultySignUpUserNameField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_height="wrap_content">
 
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:id="@+id/faculty_username_singup"
+                        android:id="@+id/FacultySignUpUserNameText"
                         android:layout_height="match_parent"
                         >
 
@@ -80,12 +80,13 @@
                     android:hint="Email"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:padding="7dp"
+                    android:id="@+id/FacultySignUpEmailField"
                     android:layout_height="wrap_content">
 
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:id="@+id/faculty_email_signup"
+                        android:id="@+id/FacultySignUpEmailText"
                         android:layout_height="match_parent">
 
                     </com.google.android.material.textfield.TextInputEditText>
@@ -115,6 +116,7 @@
                     android:layout_width="match_parent"
                     android:hint="Password"
                     android:padding="7dp"
+                    android:id="@+id/FacultySignUpPasswordField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     app:endIconMode="password_toggle"
                     android:layout_height="wrap_content">
@@ -123,7 +125,8 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:inputType="textPassword"
-                        android:id="@+id/faculty_password_signup"
+
+                        android:id="@+id/FacultySignUpPasswordText"
                         android:layout_height="match_parent">
 
                     </com.google.android.material.textfield.TextInputEditText>
@@ -155,13 +158,15 @@
                 android:padding="7dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:endIconMode="password_toggle"
+                android:id="@+id/FacultySignUpConfirmPasswordField"
                 android:layout_height="wrap_content">
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:inputType="textPassword"
-                    android:id="@+id/faculty_password_signupConfirm"
+                    android:id="@+id/FacultySignUpConfirmPasswordText"
+
                     android:layout_height="match_parent">
 
                 </com.google.android.material.textfield.TextInputEditText>
@@ -192,13 +197,15 @@
                 android:layout_width="match_parent"
                 android:hint="Course"
                 android:padding="7dp"
+                android:id="@+id/FacultySignUpCourseField"
+
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
 
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:id="@+id/faculty_course_signup"
+                    android:id="@+id/FacultySignUpCourseText"
                     android:layout_height="match_parent"
                     >
 

@@ -39,14 +39,14 @@
                     android:layout_width="match_parent"
                     android:hint="User Name"
                     android:padding="7dp"
-                    android:id="@+id/st_username"
+                    android:id="@+id/StudentSignUpUserNameField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_height="wrap_content">
 
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-
+                        android:id="@+id/StudentSignUpUserNameText"
                         android:layout_height="match_parent"
                         >
 
@@ -70,7 +70,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:hint="Email"
-                    android:id="@+id/st_email"
+                    android:id="@+id/StudentSignUpEmailField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:padding="7dp"
                     android:layout_height="wrap_content">
@@ -78,7 +78,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-
+                        android:id="@+id/StudentSignUpEmailText"
                         android:layout_height="match_parent">
 
                     </com.google.android.material.textfield.TextInputEditText>
@@ -102,7 +102,7 @@
                     android:layout_width="match_parent"
                     android:hint="Password"
                     android:padding="7dp"
-                    android:id="@+id/st_password"
+                    android:id="@+id/StudentSignUpPasswordField"
                     app:endIconMode="password_toggle"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
@@ -111,7 +111,8 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-
+                        android:inputType="textPassword"
+                        android:id="@+id/StudentSignUpPasswordText"
                         android:layout_height="match_parent"
                         >
 
@@ -137,7 +138,7 @@
                     android:hint="Confirm Password"
                     app:endIconMode="password_toggle"
                     android:padding="7dp"
-                    android:id="@+id/st_confirm"
+                    android:id="@+id/StudentSignUpConfirmPasswordField"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
                     android:layout_height="wrap_content">
@@ -145,6 +146,8 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
+                        android:id="@+id/StudentSignUpConfirmPasswordText"
+                        android:inputType="textPassword"
 
                         android:layout_height="match_parent">
 
@@ -172,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:id="@+id/btn_signup"
+                    android:id="@+id/NormalStudentSignup"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="16sp"
