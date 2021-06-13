@@ -38,7 +38,9 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:hint="User Name"
+                    android:id="@+id/studentSignUpUserNameFiled"
                     android:padding="7dp"
+                    app:errorEnabled="true"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_height="wrap_content">
 
@@ -108,6 +110,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
+                        android:inputType="textPassword"
                         android:id="@+id/faculty_password_signup"
                         android:layout_height="match_parent"
                         >
@@ -141,6 +144,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
+                        android:inputType="textPassword"
                         android:id="@+id/faculty_password_signupConfirm"
                         android:layout_height="match_parent">
 

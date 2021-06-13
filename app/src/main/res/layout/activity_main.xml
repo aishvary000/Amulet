@@ -44,7 +44,8 @@
                     android:layout_width="match_parent"
                     android:hint="Email"
                     android:padding="7dp"
-
+                    android:id="@+id/mainActivityEmail"
+                    app:errorEnabled="true"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_height="wrap_content">
 
