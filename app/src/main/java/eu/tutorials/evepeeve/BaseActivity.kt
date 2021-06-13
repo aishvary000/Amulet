@@ -19,8 +19,21 @@ open class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
     }
+    fun validateForLogin(email:String,password:String,context: Context):Boolean{
+        if(email=="")
+        {
+            Toast.makeText(context,"Email field can't be empty",Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if(password.length < 8)
+        {
+            Toast.makeText(context,"Minimum Password size is 8",Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return false
+    }
 
-    fun validate(userName:String,email:String,password:String,againPass:String,context:Context):Boolean{
+    fun validateForRegister(userName:String,email:String,password:String,againPass:String,context:Context):Boolean{
 
         if(userName=="")
         {

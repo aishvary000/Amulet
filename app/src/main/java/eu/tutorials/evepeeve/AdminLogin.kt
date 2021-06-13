@@ -1,7 +1,8 @@
 package eu.tutorials.evepeeve
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import eu.tutorials.evepeeve.Database.DatabaseManagement
 import kotlinx.android.synthetic.main.activity_admin_login.*
 
 class AdminLogin : BaseActivity() {
@@ -9,6 +10,15 @@ class AdminLogin : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_login)
         Listeners()
+    }
+    fun adminLogin(v: View)
+    {
+        val email:String = AdminLoginEmailText.text.toString()
+        var password:String = AdminLoginPasswordText.text.toString()
+        if(validateForLogin(email,password,this))
+            {
+                        DatabaseManagement().loginAdmin(email,password)
+            }
     }
     fun Listeners()
     {

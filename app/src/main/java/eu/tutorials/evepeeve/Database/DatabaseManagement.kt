@@ -7,10 +7,12 @@ import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firestore.v1.ListenResponse
 import eu.tutorials.evepeeve.BaseActivity
+import eu.tutorials.evepeeve.Models.Admin
 import eu.tutorials.evepeeve.Models.Students
 import eu.tutorials.evepeeve.R
 import eu.tutorials.evepeeve.StudentSignup
@@ -47,6 +49,25 @@ class DatabaseManagement:BaseActivity() {
             .addOnFailureListener { it ->
                 Log.e("this", it.toString())
             }
+    }
+    fun loginAdmin(email:String,password:String)
+    {
+        firebaseAuth.signInWithEmailAndPassword(email,password)
+            .addOnSuccessListener {it->
+                    Log.e("OKidoki",it.toString())
+                    firestore.collection("admin").document(it.user?.uid.toString()).get()
+                        .addOnSuccessListener {it1->
+                            Log.e("hello ",it1.toString())
+                        }
+                        .addOnFailureListener {
+                            Log.e("error ",it.toString())
+                        }
+            }
+            .addOnFailureListener {
+                Log.e("error : ",it.toString())
+            }
+
+
     }
 
 

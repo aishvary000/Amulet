@@ -42,7 +42,7 @@ class StudentSignup : BaseActivity() {
         var password: String = StudentSignUpPasswordText.text.toString()
         var againPass: String = StudentSignUpConfirmPasswordText.text.toString()
         var email: String = StudentSignUpEmailText.text.toString()
-        if (validate(userName, email, password, againPass, this)) {
+        if (validateForRegister(userName, email, password, againPass, this)) {
             DatabaseManagement().registerStudentForAuthorization(
 
                 Students(
