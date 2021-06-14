@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StudentOptions"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/admin_bg">
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="100dp"
+        android:layout_marginTop="110dp">
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="35dp">
+            <ImageView
+                android:id="@+id/clubs_page_opening_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic__club"
+                android:clickable="true"
+                android:onClick="clubs_page"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Club Activity"
+                android:textStyle="bold"
+                ></TextView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="900dp"
+        android:layout_marginTop="200dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="35dp">
+            <ImageView
+                android:id="@+id/classroom_page_opening_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic__class"
+                android:clickable="true"
+                android:onClick="classroom_page"/>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="   Classroom "
+                android:textStyle="bold"
+                ></TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+
