@@ -64,7 +64,8 @@ class MainActivity : BaseActivity() {
         if (item != null) {
             if(item.designation == "Student")
             {
-                    val intent =  Intent(context,StudentSignup::class.java)
+                    val intent =  Intent(context,StudentOptions::class.java)
+                    //intent.putExtras(item)
                     context.startActivity(intent)
             }
             if(item.designation == "Admin")
