@@ -23,14 +23,12 @@ class MainActivity : BaseActivity() {
         validateLocally("Email",mainActivityLoginEmailText,mainActivityLoginEmailField)
         validateLocally("Password",mainActivityLoginPasswordText,mainActivityLoginPasswordField)
     }
-    fun student_signup(v: View){
-        val intent = Intent(this, StudentSignup::class.java)
-        startActivity(intent)
-
+    fun logInUnknown(v:View)
+    {
 
     }
-    fun perform_action(v:View){
-        val intent = Intent(this,AdminLogin::class.java)
+    fun student_signup(v:View){
+        val intent = Intent(this,StudentSignup::class.java)
         startActivity(intent)
 
     }

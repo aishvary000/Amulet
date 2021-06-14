@@ -118,6 +118,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="16sp"
+                    android:onClick="logInUnknown"
                     android:clickable="true"
                     android:textAllCaps="false"
                     android:text="Login"
@@ -127,27 +128,7 @@
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="50dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:id="@+id/RegisterUser"
-            android:textColor="	#808080"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textAllCaps="false"
-            android:background="@drawable/custom_ripple_effect_white"
-            android:clickable="true"
-            android:onClick="student_signup"
-            android:text="Sign up as User"
-            android:padding="20dp"/>
 
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -161,13 +142,13 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:background="@drawable/custom_ripple_effect_pink"
-            android:id="@+id/loginAsAdmin"
+            android:id="@+id/singUpAsUser"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:text="Login As Admin"
+            android:text="Sign Up As User"
             android:clickable="true"
-            android:onClick="perform_action"
+            android:onClick="student_signup"
             android:padding="20dp"/>
     </androidx.cardview.widget.CardView>
 
