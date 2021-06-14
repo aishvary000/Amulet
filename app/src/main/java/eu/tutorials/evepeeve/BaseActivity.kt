@@ -135,10 +135,7 @@ open class BaseActivity : AppCompatActivity() {
 
 
     }
-    fun showErrorSnackBar(message:String)
-    {
 
-    }
     fun getCurrentUserId(): String {
         var currentUserId = ""
         var currentUser = FirebaseAuth.getInstance().currentUser

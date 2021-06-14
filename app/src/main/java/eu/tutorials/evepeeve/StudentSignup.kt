@@ -1,13 +1,11 @@
 package eu.tutorials.evepeeve
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import eu.tutorials.evepeeve.Models.Students
+import eu.tutorials.evepeeve.Models.Users
 import eu.tutorials.evepeeve.Database.DatabaseManagement
 import kotlinx.android.synthetic.main.activity_student_signup.*
 import kotlinx.android.synthetic.main.custom_toast.*
@@ -45,10 +43,10 @@ class StudentSignup : BaseActivity() {
         if (validateForRegister(userName, email, password, againPass, this)) {
             DatabaseManagement().registerStudentForAuthorization(
 
-                Students(
+                Users(
                     name = userName,
                     email = email,
-                    admin = "false",
+                    designation = "Student",
                     password = password
                 ),this
             )

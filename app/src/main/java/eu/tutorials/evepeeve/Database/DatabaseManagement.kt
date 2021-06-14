@@ -8,20 +8,19 @@ import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
-import com.google.firestore.v1.ListenResponse
 import eu.tutorials.evepeeve.*
-import eu.tutorials.evepeeve.Models.Admin
-import eu.tutorials.evepeeve.Models.Students
+import eu.tutorials.evepeeve.Models.Users
 import kotlinx.android.synthetic.main.custom_toast.*
+import kotlinx.android.synthetic.main.custom_toast_error.*
+import kotlinx.android.synthetic.main.custom_toast_error.view.*
 import java.lang.Exception
 
 class DatabaseManagement:BaseActivity() {
     private val firestore = FirebaseFirestore.getInstance()
     private val firebaseAuth = FirebaseAuth.getInstance()
-    fun registerStudentInFirestore(userInfo: Students,activity: StudentSignup) {
+    fun registerStudentInFirestore(userInfo: Users, activity: StudentSignup) {
         firestore.collection(eu.tutorials.evepeeve.utils.Constants.studentsDb).document(userInfo.id)
             .set(userInfo, SetOptions.merge())
             .addOnSuccessListener { it ->
@@ -33,7 +32,7 @@ class DatabaseManagement:BaseActivity() {
             }
     }
 
-    fun registerStudentForAuthorization(userInfo: Students,activity:StudentSignup){
+    fun registerStudentForAuthorization(userInfo: Users, activity:StudentSignup){
         firebaseAuth.createUserWithEmailAndPassword(userInfo.email, userInfo.password)
             .addOnSuccessListener { it ->
                 //updating id of user to that of firebase
@@ -50,35 +49,31 @@ class DatabaseManagement:BaseActivity() {
                 Log.e("this", it.toString())
             }
     }
-    fun loginAdmin(email:String,password:String,context:AdminLogin)
+    fun loginAdmin(email:String,password:String,context:Context,activity:MainActivity)
     {
         firebaseAuth.signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {it->
 
-                    firestore.collection("admin").document(getCurrentUserId()).get()
-                        .addOnSuccessListener {it1->
-                            Log.e("hello ",it1.toString())
-                            try{
-                                var intent:Intent = Intent( context,AdminOptions::class.java)
-                                context.startActivity(intent)
-                            }
-                            catch (e:Exception)
-                            {
-                                Log.e("HEre ",e.toString())
+                    firestore.collection("Users").document(getCurrentUserId()).get()
+                        .addOnSuccessListener {it->
 
-                            }
+                           activity.signInUser(it,context)
 
                         }
                         .addOnFailureListener {
-                            Log.e("error ",it.toString())
+                            Log.e("here",it.toString())
                         }
             }
             .addOnFailureListener {
+                //Toast.makeText(context,"User not exist",Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(context,"User Not exist",Toast.LENGTH_SHORT).show()
                 Log.e("error : ",it.toString())
             }
 
 
     }
+
 
 
 

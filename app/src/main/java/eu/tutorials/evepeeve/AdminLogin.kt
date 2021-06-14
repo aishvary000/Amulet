@@ -15,18 +15,18 @@ class AdminLogin : BaseActivity() {
         Listeners()
     }
 
-    fun adminLogin(v: View)
-    {
-
-        val email:String = AdminLoginEmailText.text.toString()
-        val password:String = AdminLoginPasswordText.text.toString()
-        if(validateForLogin(email,password,this))
-            {
-                        DatabaseManagement().loginAdmin(email,password,this)
-            }
-        else
-            Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()
-    }
+//    fun adminLogin(v: View)
+//    {
+//
+//        val email:String = AdminLoginEmailText.text.toString()
+//        val password:String = AdminLoginPasswordText.text.toString()
+//        if(validateForLogin(email,password,this))
+//            {
+//                        DatabaseManagement().loginAdmin(email,password,this,MainActivity())
+//            }
+//        else
+//            Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()
+//    }
 
     fun Listeners()
     {

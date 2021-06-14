@@ -9,7 +9,7 @@ import androidx.core.app.ActivityCompat.startActivityForResult
 
 
 public object  Constants{
-    const val studentsDb:String = "students"
+    const val studentsDb:String = "Users"
     const val BOARDS:String="boards"
     const val BOARD_CREATED:String="personCreated"
     const val IMAGE:String="image"

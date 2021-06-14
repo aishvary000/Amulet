@@ -13,4 +13,5 @@
     <color name="custom_ripple_color_white_bg">#a9a9a9</color>
     <color name="custom_ripple_color_pink_bg">#FFB6C1</color>
     <color name="themeColor">#e75480</color>
+    <color name="error">#DC143C</color>
 </resources>
