@@ -19,10 +19,10 @@ class AdminLogin : BaseActivity() {
     {
 
         val email:String = AdminLoginEmailText.text.toString()
-        var password:String = AdminLoginPasswordText.text.toString()
+        val password:String = AdminLoginPasswordText.text.toString()
         if(validateForLogin(email,password,this))
             {
-                        DatabaseManagement().loginAdmin(email,password,AdminLogin(),this)
+                        DatabaseManagement().loginAdmin(email,password,this)
             }
         else
             Toast.makeText(this,"Error",Toast.LENGTH_SHORT).show()

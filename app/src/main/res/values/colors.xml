@@ -10,4 +10,7 @@
     <color name="Success">	#00FF00	</color>
     <color name="dark_blue">#000087</color>
     <color name="outlinedBoxDeafaultColor">#585858</color>
+    <color name="custom_ripple_color_white_bg">#a9a9a9</color>
+    <color name="custom_ripple_color_pink_bg">#FFB6C1</color>
+    <color name="themeColor">#e75480</color>
 </resources>
