@@ -65,6 +65,7 @@ class MainActivity : BaseActivity() {
             if(item.designation == "Student")
             {
                     val intent =  Intent(context,StudentOptions::class.java)
+                    intent.putExtra("UserInfo",item)
                     //intent.putExtras(item)
                     context.startActivity(intent)
             }

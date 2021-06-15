@@ -16,7 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Aishvary"
         android:id="@+id/loggedinStudentname"
         />
     <LinearLayout
@@ -64,10 +63,9 @@
                             android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="  E CELL"
-                            android:textSize="30sp"
+                            android:text="  E Cell"
+
                             android:textStyle="bold"
-                            android:textColor="@color/black"
                             ></TextView>
 
                     </LinearLayout>
@@ -100,9 +98,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Capriciio"
-                            android:textSize="30sp"
+
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+
                             ></TextView>
 
                     </LinearLayout>
@@ -135,9 +133,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Insignia"
-                            android:textSize="30sp"
                             android:textStyle="bold"
-                            android:textColor="@color/black"
                             ></TextView>
 
                     </LinearLayout>
@@ -170,9 +166,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Cybros"
-                            android:textSize="30sp"
+
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+
                             ></TextView>
 
                     </LinearLayout>
@@ -205,9 +201,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Phoenix"
-                            android:textSize="30sp"
+
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+
                             ></TextView>
 
                     </LinearLayout>
@@ -237,9 +233,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Imagination"
-                            android:textSize="24sp"
+                            android:gravity="center"
+
                             android:textStyle="bold"
-                            android:textColor="@color/black"
+
                             ></TextView>
 
                     </LinearLayout>
