@@ -43,12 +43,13 @@
         android:layout_height="160dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="900dp"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="50dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center"
+
             android:padding="35dp">
             <ImageView
                 android:id="@+id/classroom_page_opening_btn"
@@ -66,5 +67,28 @@
                 ></TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:layout_width="match_parent"
+        app:fabCradleMargin="12dp"
+        app:fabCradleVerticalOffset="20dp"
+        android:background="@color/themeColor"
+        app:fabCradleRoundedCornerRadius="20dp"
+        android:id="@+id/bottomAppBarStudentOptions"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            app:fabSize="auto"
+            android:layout_height="wrap_content"
+            android:src="@drawable/accountimage"
+            app:layout_anchor="@id/bottomAppBarStudentOptions"
+            android:id="@+id/studentAccount"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </LinearLayout>
 

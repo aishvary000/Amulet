@@ -198,11 +198,8 @@
                 android:hint="Course"
                 android:padding="7dp"
                 android:id="@+id/FacultySignUpCourseField"
-
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content">
-
-
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:id="@+id/FacultySignUpCourseText"
