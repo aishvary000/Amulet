@@ -46,27 +46,28 @@
 
 
                     >
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
                         android:gravity="center"
+                        android:orientation="vertical"
                         android:padding="20dp">
+
                         <ImageView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_ecell"
                             android:clickable="true"
-                            />
+                            android:src="@drawable/ic_ecell" />
+
                         <TextView
-                            android:layout_marginTop="10dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
                             android:text="  E Cell"
 
-                            android:textStyle="bold"
-                            ></TextView>
+                            android:textStyle="bold"></TextView>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
