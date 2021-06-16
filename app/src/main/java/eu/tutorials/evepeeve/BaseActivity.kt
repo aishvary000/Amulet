@@ -1,5 +1,6 @@
 package eu.tutorials.evepeeve
 
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.text.Editable
@@ -13,9 +14,11 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_student_signup.*
+import kotlinx.android.synthetic.main.custom_progress_bar.*
 import kotlinx.android.synthetic.main.custom_toast.*
 
 open class BaseActivity : AppCompatActivity() {
+    private lateinit var mDialog : Dialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
@@ -142,6 +145,12 @@ open class BaseActivity : AppCompatActivity() {
         if(currentUser!=null)
             currentUserId = currentUser.uid
         return currentUserId
+    }
+    fun showProgressDialog(text:String){
+        mDialog= Dialog(this)
+        mDialog.setContentView(R.layout.custom_progress_bar)
+        mDialog.progressbartext.text = text
+        mDialog.show()
     }
 
 

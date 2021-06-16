@@ -38,6 +38,7 @@ class MainActivity : BaseActivity() {
     {
         val email:String  = mainActivityLoginEmailText.text.toString()
         val password:String = mainActivityLoginPasswordText.text.toString()
+        showProgressDialog("Please Wait Authorizing")
         if(validateForLogin(email,password,this))
         {
             DatabaseManagement().loginAdmin(email,password,this, MainActivity())

@@ -49,6 +49,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:hint="Email"
+
                     android:padding="7dp"
                     android:id="@+id/mainActivityLoginEmailField"
                     app:errorEnabled="true"
