@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">#1E90FF</item>
         <item name="colorOnPrimary">#000087</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#FFBB86FC</item>
+        <item name="colorSecondary">#1E90FF</item>
         <item name="colorSecondaryVariant">#FF03DAC5</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
@@ -15,11 +15,11 @@
     </style>
     <style name="Theme.Evepeeve.NoactinBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#1E90FF</item>
-        <item name="colorPrimaryVariant">#e75480</item>
+        <item name="colorPrimary">#00bfff</item>
+        <item name="colorPrimaryVariant">#1E90FF</item>
         <item name="colorOnPrimary">#000087</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">#FFBB86FC</item>
+        <!-- Secondary brand color. this helps in button and loading screen -->
+        <item name="colorSecondary">#1E90FF</item>
         <item name="colorSecondaryVariant">#FF03DAC5</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->

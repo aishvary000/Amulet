@@ -5,172 +5,201 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/newbg"
     android:gravity="bottom"
+
     android:padding="0.0dp"
     android:layout_gravity="bottom"
     tools:context=".MainActivity"
    >
-
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="3dp"
-        android:layout_marginHorizontal="5dp"
-
-
-       >
-
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:paddingVertical="60dp"
-            android:paddingHorizontal="20dp"
+            android:background="@drawable/logo2"
+            android:orientation="horizontal">
 
-           >
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_email"
-                    android:scaleType="center"
-                    />
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:hint="Email"
+        </LinearLayout>
 
-                    android:padding="7dp"
-                    android:id="@+id/mainActivityLoginEmailField"
-                    app:errorEnabled="true"
-
-                    android:layout_height="wrap_content">
+    </LinearLayout>
 
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:id="@+id/mainActivityLoginEmailText"
-                        android:layout_height="match_parent"
-                        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#318ce7"
 
-                    </com.google.android.material.textfield.TextInputEditText>
-                </com.google.android.material.textfield.TextInputLayout>
 
-                <!--            </androidx.cardview.widget.CardView>-->
-            </LinearLayout>
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="30dp"
+
+
+            >
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_password"
-                    android:scaleType="center"
-                    />
-                <!--            <androidx.cardview.widget.CardView-->
-
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_marginStart="10dp"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:cardCornerRadius="10dp"-->
-                <!--                android:layout_marginLeft="10dp">-->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:hint="Password"
-                    android:padding="7dp"
-                    android:id="@+id/mainActivityLoginPasswordField"
-                    app:endIconMode="password_toggle"
-                    android:layout_height="wrap_content">
-
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:inputType="textPassword"
-                        android:id="@+id/mainActivityLoginPasswordText"
-                        android:layout_height="match_parent">
-
-                    </com.google.android.material.textfield.TextInputEditText>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <!--            </androidx.cardview.widget.CardView>-->
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-               android:gravity="center"
+                android:layout_gravity="center"
                 android:orientation="vertical"
-                android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="#1E90FF"
-                android:layout_marginHorizontal="20dp"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="30dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:id="@+id/MainActivityLoginBtn"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
+                android:padding="10dp"
+                android:paddingHorizontal="20dp"
 
-                    android:textSize="20sp"
-                    android:onClick="logInUnknown"
-                    android:clickable="true"
-                    android:textAllCaps="false"
-                    android:text="Login"
-                    android:padding="20dp"
-                    />
 
-            </androidx.cardview.widget.CardView>
-            </LinearLayout>
+                >
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_email" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/mainActivityLoginEmailField"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:padding="7dp"
+
+                        app:errorEnabled="true">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mainActivityLoginEmailText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--            </androidx.cardview.widget.CardView>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_password" />
+                    <!--            <androidx.cardview.widget.CardView-->
+
+                    <!--                android:layout_width="match_parent"-->
+                    <!--                android:layout_marginStart="10dp"-->
+                    <!--                android:layout_height="wrap_content"-->
+                    <!--                app:cardCornerRadius="10dp"-->
+                    <!--                android:layout_marginLeft="10dp">-->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/mainActivityLoginPasswordField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:padding="7dp"
+                        app:endIconMode="password_toggle">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mainActivityLoginPasswordText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="textPassword">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--            </androidx.cardview.widget.CardView>-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        app:cardBackgroundColor="#318ce7"
+                        app:cardCornerRadius="30dp">
+
+                        <TextView
+                            android:id="@+id/MainActivityLoginBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:onClick="logInUnknown"
+
+                            android:padding="20dp"
+                            android:text="Login"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
 
-             <TextView
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:text="Sign Up"
-                 android:textStyle="normal"
-                 android:textColor="@color/black"
-                 android:clickable="true"
-                 android:onClick="student_signup"
-                 android:layout_gravity="start"/>
-                 <LinearLayout
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:gravity="end"
-                     android:orientation="horizontal">
-
-
                     <TextView
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Forgot Password?"
-                        android:textStyle="normal"
-                        android:textColor="@color/black"
+                        android:layout_gravity="start"
                         android:clickable="true"
                         android:onClick="student_signup"
-                        android:layout_gravity="start"/>
-                 </LinearLayout>
+                        android:text="Sign Up"
+                        android:textColor="@color/black"
+                        android:textStyle="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:clickable="true"
+                            android:onClick="student_signup"
+                            android:text="Forgot Password?"
+                            android:textColor="@color/black"
+                            android:textStyle="normal" />
+                    </LinearLayout>
                 </LinearLayout>
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 
 
