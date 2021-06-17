@@ -24,7 +24,7 @@ import kotlinx.android.synthetic.main.custom_toast_error.*
 import kotlinx.android.synthetic.main.custom_toast_error.view.*
 
 class MainActivity : BaseActivity() {
-
+    private var mDialog: Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -45,11 +45,11 @@ class MainActivity : BaseActivity() {
     {
         val email:String  = mainActivityLoginEmailText.text.toString()
         val password:String = mainActivityLoginPasswordText.text.toString()
-        showProgressDialog("Please Wait")
+
         if(validateForLogin(email,password,this,))
         {
-
-            DatabaseManagement().loginAdmin(email,password,this, MainActivity())
+            showProgressDialog("Please Wait")
+            DatabaseManagement().loginAdmin(email,password,this, this)
         }
     }
     fun student_signup(v:View){
@@ -68,7 +68,7 @@ class MainActivity : BaseActivity() {
 //    }
     fun signInUser(document:DocumentSnapshot?,context: Context,activity: MainActivity)
     {
-        Failed()
+        mDialog?.dismiss()
         val item = document ?.toObject(Users::class.java)
         if (item != null) {
             if(item.designation == "Student")
@@ -85,9 +85,40 @@ class MainActivity : BaseActivity() {
             }
         }
     }
-    fun Failed()
+    fun showProgressDialog(text:String){
+        mDialog= Dialog(this)
+        mDialog?.setContentView(R.layout.custom_progress_bar)
+        mDialog?.progressbartext?.text = text
+        mDialog?.show()
+    }
+    fun showSucessToast(message:String)
     {
-        mDialog.dismiss()
+        var inflater: LayoutInflater = LayoutInflater.from(this)
+        var layout: View = inflater.inflate(R.layout.custom_toast,customll)
+        layout.custom_Toast_text_Success.text = message
+        var toast:Toast = Toast(applicationContext)
+        toast.setGravity(Gravity.BOTTOM,Gravity.CENTER,10)
+        toast.view = layout
+        toast.show()
+    }
+    fun FailureToast(message:String)
+    {
+        var inflater: LayoutInflater = LayoutInflater.from(this)
+        var layout: View = inflater.inflate(R.layout.custom_toast_error,customllError)
+        layout.custom_Toast_text_Failure.text = message
+        var toast:Toast = Toast(applicationContext)
+        toast.setGravity(Gravity.BOTTOM,Gravity.CENTER,10)
+        toast.view = layout
+        toast.show()
+    }
+    fun showError(messgae:String){
+        FailureToast(messgae)
+        mDialog?.dismiss()
+
+    }
+    fun showToast(messgae:String)
+    {
+        Toast.makeText(this,messgae,Toast.LENGTH_LONG).show()
     }
 
 

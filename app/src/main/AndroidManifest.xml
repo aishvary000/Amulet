@@ -20,9 +20,9 @@
         <activity android:name=".FacultySignup" />
         <activity android:name=".StudentSignup" />
         <activity android:name=".MainActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.Evepeeve.NoactinBar"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

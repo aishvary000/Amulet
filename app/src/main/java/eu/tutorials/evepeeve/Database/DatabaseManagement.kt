@@ -67,14 +67,14 @@ class DatabaseManagement:BaseActivity() {
                         }
                         .addOnFailureListener {
 
-                            Toast.makeText(this,"User not exist",Toast.LENGTH_SHORT).show()
-                            activity.Failed()
+                            activity.showError("User Not in Databaase")
+
                             Log.e("here",it.toString())
                         }
             }
             .addOnFailureListener {
 
-                activity.Failed()
+                activity.showError("User Not found")
                 Log.e("error : ",it.toString())
             }
 

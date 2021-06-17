@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.custom_progress_bar.*
 import kotlinx.android.synthetic.main.custom_toast.*
 
 open class BaseActivity : AppCompatActivity() {
-    lateinit var mDialog : Dialog
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -148,17 +148,8 @@ open class BaseActivity : AppCompatActivity() {
             currentUserId = currentUser.uid
         return currentUserId
     }
-    fun showProgressDialog(text:String){
-        mDialog= Dialog(this)
-        mDialog.setContentView(R.layout.custom_progress_bar)
-        mDialog.progressbartext.text = text
-        mDialog.show()
-    }
-    fun hideProgressDialog(){
 
-        mDialog.dismiss()
 
-    }
 
 
 
