@@ -28,17 +28,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:background="#318ce7"
-
-
         android:layout_height="match_parent">
-
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="30dp"
+
+
 
 
             >
@@ -49,7 +46,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:orientation="vertical"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:paddingHorizontal="20dp"
 
 
@@ -74,7 +71,10 @@
                         android:layout_height="wrap_content"
                         android:hint="Email"
                         android:padding="7dp"
-
+                        app:boxCornerRadiusBottomEnd="20dp"
+                        app:boxCornerRadiusBottomStart="20dp"
+                        app:boxCornerRadiusTopEnd="20dp"
+                        app:boxCornerRadiusTopStart="20dp"
                         app:errorEnabled="true">
 
 
@@ -112,6 +112,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Password"
+                        app:boxCornerRadiusBottomEnd="20dp"
+                        app:boxCornerRadiusBottomStart="20dp"
+                        app:boxCornerRadiusTopEnd="20dp"
+                        app:boxCornerRadiusTopStart="20dp"
                         android:padding="7dp"
                         app:endIconMode="password_toggle">
 
