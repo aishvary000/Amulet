@@ -1,5 +1,6 @@
 package eu.tutorials.evepeeve
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
@@ -18,7 +19,8 @@ import kotlinx.android.synthetic.main.custom_progress_bar.*
 import kotlinx.android.synthetic.main.custom_toast.*
 
 open class BaseActivity : AppCompatActivity() {
-    private lateinit var mDialog : Dialog
+    lateinit var mDialog : Dialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base)
@@ -152,7 +154,11 @@ open class BaseActivity : AppCompatActivity() {
         mDialog.progressbartext.text = text
         mDialog.show()
     }
+    fun hideProgressDialog(){
 
+        mDialog.dismiss()
+
+    }
 
 
 

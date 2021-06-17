@@ -5,33 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#C0C0C0"
-
+    android:background="@drawable/newbg"
+    android:gravity="bottom"
+    android:padding="0.0dp"
+    android:layout_gravity="bottom"
     tools:context=".MainActivity"
    >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/bgmain"
-        android:layout_height="wrap_content">
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
         app:cardCornerRadius="30dp"
-        app:cardBackgroundColor="#FFDF00"
-        android:layout_marginTop="-20dp"
-        android:layout_gravity="center"
-        app:cardElevation="0.5dp">
+
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_gravity="bottom"
+            android:gravity="center"
             android:paddingVertical="60dp"
             android:paddingHorizontal="20dp"
 
@@ -116,14 +109,13 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_marginTop="10dp"
-                app:cardBackgroundColor="#e75480"
+                app:cardBackgroundColor="#00BFFF"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="50dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:background="@color/black"
                     android:id="@+id/MainActivityLoginBtn"
                     android:textColor="@color/white"
                     android:textStyle="bold"
@@ -141,28 +133,7 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="#e75480"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
-        app:cardCornerRadius="50dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:background="@color/black"
-            android:id="@+id/singUpAsUser"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:text="Sign Up As User"
-            android:clickable="true"
-            android:onClick="student_signup"
-            android:padding="20dp"/>
-    </androidx.cardview.widget.CardView>
-    </LinearLayout>
+
 
 
 </LinearLayout>

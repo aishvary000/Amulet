@@ -1,5 +1,8 @@
 package eu.tutorials.evepeeve
 
+import android.app.Activity
+import android.app.Dialog
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,12 +17,14 @@ import eu.tutorials.evepeeve.Database.DatabaseManagement
 import eu.tutorials.evepeeve.Models.Users
 import kotlinx.android.synthetic.main.activity_faculty_signup.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.custom_progress_bar.*
 import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.custom_toast.view.*
 import kotlinx.android.synthetic.main.custom_toast_error.*
 import kotlinx.android.synthetic.main.custom_toast_error.view.*
 
 class MainActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,9 +43,10 @@ class MainActivity : BaseActivity() {
     {
         val email:String  = mainActivityLoginEmailText.text.toString()
         val password:String = mainActivityLoginPasswordText.text.toString()
-        showProgressDialog("Please Wait Authorizing")
-        if(validateForLogin(email,password,this))
+        showProgressDialog("Please Wait")
+        if(validateForLogin(email,password,this,))
         {
+
             DatabaseManagement().loginAdmin(email,password,this, MainActivity())
         }
     }
@@ -58,9 +64,9 @@ class MainActivity : BaseActivity() {
 //        toast.view = layout
 //        toast.show()
 //    }
-    fun signInUser(document:DocumentSnapshot?,context: Context)
+    fun signInUser(document:DocumentSnapshot?,context: Context,activity: MainActivity)
     {
-
+        Failed()
         val item = document ?.toObject(Users::class.java)
         if (item != null) {
             if(item.designation == "Student")
@@ -77,4 +83,11 @@ class MainActivity : BaseActivity() {
             }
         }
     }
+    fun Failed()
+    {
+        mDialog.dismiss()
+    }
+
+
+
 }
