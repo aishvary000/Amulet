@@ -53,7 +53,7 @@ class MainActivity : BaseActivity() {
         }
     }
     fun student_signup(v:View){
-        val intent = Intent(this,SignUpByAdmin::class.java)
+        val intent = Intent(this,StudentSignup::class.java)
         startActivity(intent)
     }
 //    fun ErrorToast(message:String)
