@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Evepeeve">
         <activity android:name=".SignUpByAdmin"
+            android:theme="@style/Theme.Evepeeve.NoactinBar"
             />
         <activity android:name=".Classroom" />
         <activity android:name=".Clubs" />

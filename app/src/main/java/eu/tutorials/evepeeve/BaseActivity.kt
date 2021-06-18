@@ -149,14 +149,9 @@ open class BaseActivity : AppCompatActivity() {
             currentUserId = currentUser.uid
         return currentUserId
     }
-    fun validateForRegisterAdmin(userName:String,designation:String,email:String,password:String,againPass:String,context:Context):Boolean{
+    fun validateForRegisterAdmin(designation:String,email:String,password:String,againPass:String,context:Context):Boolean{
 
-        if(userName=="")
-        {
-            Toast.makeText(context,"User Name Can't be empty",Toast.LENGTH_SHORT).show()
-            StudentSignUpUserNameField.error
-            return false
-        }
+
         if(designation=="")
         {
             Toast.makeText(context,"Designation Can't be empty",Toast.LENGTH_SHORT).show()

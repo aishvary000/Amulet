@@ -8,130 +8,204 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:background="#000087"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="#318ce7"
         android:orientation="vertical"
         android:gravity="center"
         >
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_user"
+            android:src="@drawable/picadd"
             android:padding="25dp"
             android:background="@drawable/circle"/>
     </LinearLayout>
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:elevation="10dp"
-        android:layout_marginTop="-50dp"
-        >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="40dp">
+            android:layout_height="wrap_content"
+            android:background="#318ce7"
+            android:orientation="vertical">
+
+
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            app:cardCornerRadius="15dp"
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/usernameAdmin"
+                android:gravity="center"
+                android:padding="30dp"
+
+
+                android:orientation="vertical">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Username"
-                    android:ems="20"
-                    android:paddingStart="5dp"
-                    android:singleLine="true"
-
-                    />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/designationAdmin"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Designation"
-                    android:ems="20"
-                    android:paddingStart="5dp"
-                    android:singleLine="true"
-
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/emailAdmin"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Email"
-                    android:ems="20"
-                    android:paddingStart="5dp"
-                    android:singleLine="true"
-
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/passwordAdmin"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
-                    app:endIconMode = "password_toggle"
-                    android:ems="20"
-                    android:paddingStart="5dp"
-                    android:singleLine="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_email"
+                        android:scaleType="center"
+                        />
 
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-                <EditText
-                    android:id="@+id/confirmPasswordAdmin"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:hint="Email"
+                        android:id="@+id/StudentSignUpEmailField"
+                        android:padding="7dp"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/emailAdmin"
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint="Confirm Password"
-                    android:ems="20"
-                    android:paddingStart="5dp"
-                    android:singleLine="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/designation"
+                        android:scaleType="center"
+                        />
 
-                    />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:hint="Designation"
+                        android:layout_marginStart="5dp"
+                        android:padding="7dp"
+                        android:id="@+id/StudentSignUpUserNameField"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/designationAdmin"
+                            android:layout_height="match_parent"
+                            >
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_password"
+                        android:scaleType="center"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:hint="Password"
+                        android:padding="7dp"
+                        android:id="@+id/StudentSignUpPasswordField"
+                        app:endIconMode="password_toggle"
+
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:inputType="textPassword"
+                            android:id="@+id/passwordAdmin"
+                            android:layout_height="match_parent"
+                            >
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_password"
+                        android:scaleType="center"
+                        />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:hint="Confirm Password"
+                        app:endIconMode="password_toggle"
+                        android:padding="7dp"
+                        android:id="@+id/StudentSignUpConfirmPasswordField"
+                        android:layout_height="wrap_content">
+
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:id="@+id/confirmPasswordAdmin"
+                            android:inputType="textPassword"
+
+                            android:layout_height="match_parent">
+
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--            </androidx.cardview.widget.CardView>-->
+                </LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="18dp"
+                    app:cardBackgroundColor="#318ce7"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:id="@+id/NormalStudentSignup"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="Sign Up"
+                        android:clickable="true"
+                        android:onClick="signupAdmin"
+                        android:padding="20dp"/>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-
-
-
-
+        </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="100dp"
-        app:cardBackgroundColor="#000087"
-        app:cardCornerRadius="30dp"
-        android:layout_marginTop="-20dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Login"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:clickable="true"
-            android:onClick="signupAdmin"/>
-    </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
 
 
 

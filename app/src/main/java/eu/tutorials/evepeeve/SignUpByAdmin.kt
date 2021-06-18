@@ -20,16 +20,16 @@ class SignUpByAdmin : BaseActivity() {
         register()
     }
     private fun register(){
-        val userName: String = usernameAdmin.text.toString()
+//
         var password: String = passwordAdmin.text.toString()
         var againPass: String = confirmPasswordAdmin.text.toString()
         var email: String = emailAdmin.text.toString()
         val designation :String = designationAdmin.text.toString()
-        if (validateForRegisterAdmin(userName,designation, email, password, againPass, this)) {
+        if (validateForRegisterAdmin(designation, email, password, againPass, this)) {
             DatabaseManagement().registerAdminForAuthorization(
 
                 Users(
-                    name = userName,
+
                     email = email,
                     designation = designation,
                     password = password
