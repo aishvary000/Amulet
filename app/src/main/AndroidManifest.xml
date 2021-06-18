@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Evepeeve">
-        <activity android:name=".Classroom"></activity>
+        <activity android:name=".SignUpByAdmin"
+            />
+        <activity android:name=".Classroom" />
         <activity android:name=".Clubs" />
         <activity android:name=".StudentOptions" />
         <activity android:name=".AdminOptions" />
@@ -19,12 +21,11 @@
         <activity android:name=".BaseActivity" />
         <activity android:name=".FacultySignup" />
         <activity android:name=".StudentSignup" />
-        <activity android:name=".MainActivity"
-
-            android:windowSoftInputMode="adjustResize"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Evepeeve.NoactinBar"
-            >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

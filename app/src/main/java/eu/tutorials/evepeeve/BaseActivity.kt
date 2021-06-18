@@ -9,6 +9,7 @@ import android.text.TextWatcher
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -147,6 +148,43 @@ open class BaseActivity : AppCompatActivity() {
         if(currentUser!=null)
             currentUserId = currentUser.uid
         return currentUserId
+    }
+    fun validateForRegisterAdmin(userName:String,designation:String,email:String,password:String,againPass:String,context:Context):Boolean{
+
+        if(userName=="")
+        {
+            Toast.makeText(context,"User Name Can't be empty",Toast.LENGTH_SHORT).show()
+            StudentSignUpUserNameField.error
+            return false
+        }
+        if(designation=="")
+        {
+            Toast.makeText(context,"Designation Can't be empty",Toast.LENGTH_SHORT).show()
+            StudentSignUpUserNameField.error
+            return false
+        }
+
+        if(email=="")
+        {
+            Toast.makeText(context,"Email field can't be empty",Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if(password.length < 8)
+        {
+            Toast.makeText(context,"Minimum Password size is 8",Toast.LENGTH_SHORT).show()
+            return false
+        }
+        if(password != againPass)
+        {
+            Toast.makeText(context,"Password Doesn't match Try again",Toast.LENGTH_SHORT).show()
+
+            return false
+        }
+        return true
+
+
+
+
     }
 
 
