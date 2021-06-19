@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AdminOptions"
+    android:padding="5dp"
     android:orientation="vertical"
 
     >
@@ -21,14 +22,22 @@
            android:layout_marginTop="5dp"
            android:layout_marginLeft="5dp"
            android:padding="10dp"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="end"
+           android:layout_marginRight="5dp"
+           android:orientation="vertical">
+
+
        <ImageView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:src="@drawable/ic_home"
            android:background="@drawable/circleback"
            android:layout_marginTop="5dp"
-           android:layout_marginLeft="295dp"
            android:padding="10dp"/>
+       </LinearLayout>
 
 
    </LinearLayout>
