@@ -8,6 +8,7 @@ import android.widget.Toast
 import eu.tutorials.evepeeve.Database.DatabaseManagement
 import eu.tutorials.evepeeve.Models.Users
 import kotlinx.android.synthetic.main.activity_sign_up_by_admin.*
+import kotlinx.android.synthetic.main.activity_student_signup.*
 import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.custom_toast.view.*
 
@@ -15,21 +16,24 @@ class SignUpByAdmin : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_by_admin)
+        listeners()
+
     }
     fun signupAdmin(v:View){
         register()
     }
     private fun register(){
 //
+        var userName:String = UserNameAdmin.text.toString()
         var password: String = passwordAdmin.text.toString()
         var againPass: String = confirmPasswordAdmin.text.toString()
         var email: String = emailAdmin.text.toString()
         val designation :String = designationAdmin.text.toString()
-        if (validateForRegisterAdmin(designation, email, password, againPass, this)) {
+        if (validateForRegisterAdmin(userName,designation, email, password, againPass, this)) {
             DatabaseManagement().registerAdminForAuthorization(
 
                 Users(
-
+                    name = userName,
                     email = email,
                     designation = designation,
                     password = password
@@ -47,5 +51,15 @@ class SignUpByAdmin : BaseActivity() {
         toast.setGravity(Gravity.BOTTOM, Gravity.CENTER,10)
         toast.view = layout
         toast.show()
+    }
+    fun listeners()
+    {
+        validateLocally("UserName",UserNameAdmin,AdminSignUpUserNameField)
+        validateLocally("Email",emailAdmin,AdminSignUpEmailField)
+        validateLocally("Password",passwordAdmin,AdminSignUpPasswordField)
+        validateLocally("ConfirmPasswordAdmin",confirmPasswordAdmin,AdminSignUpConfirmPasswordField)
+        validateLocally("Designation",designationAdmin,AdminSignDesignationField)
+
+
     }
 }

@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_sign_up_by_admin.*
 import kotlinx.android.synthetic.main.activity_student_signup.*
 import kotlinx.android.synthetic.main.custom_progress_bar.*
 import kotlinx.android.synthetic.main.custom_toast.*
@@ -117,8 +118,32 @@ open class BaseActivity : AppCompatActivity() {
             }
 
         }
+        else if(toValidate == "Designation") {
+            if (Value.toString() == "") {
+                Layout.error = "Designation field can't be empty"
+
+            }
+            if(Value.toString()!="Admin" && Value.toString()!="Faculty")
+            {
+                Layout.error = "Designation Field can be Admin/Faculty"
+            }
+            else
+                Layout.error = null
+
+        }
+        else if(toValidate == "ConfirmPasswordAdmin")
+        {
+
+            if(passwordAdmin.text.toString() != Value.toString())
+            {
+                Layout.error  = "Password Mismatch"
+            }
+            else
+                Layout.error = null
+        }
         else if(toValidate == "ConfirmPassword")
         {
+
             if(StudentSignUpPasswordText.text.toString() != Value.toString())
             {
                 Layout.error  = "Password Mismatch"
@@ -149,9 +174,14 @@ open class BaseActivity : AppCompatActivity() {
             currentUserId = currentUser.uid
         return currentUserId
     }
-    fun validateForRegisterAdmin(designation:String,email:String,password:String,againPass:String,context:Context):Boolean{
+    fun validateForRegisterAdmin(userName: String,designation:String,email:String,password:String,againPass:String,context:Context):Boolean{
 
-
+        if(userName == "")
+        {
+            Toast.makeText(context,"UserName Can't be empty",Toast.LENGTH_SHORT).show()
+            StudentSignUpUserNameField.error
+            return false
+        }
         if(designation=="")
         {
             Toast.makeText(context,"Designation Can't be empty",Toast.LENGTH_SHORT).show()
