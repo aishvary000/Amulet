@@ -18,7 +18,7 @@
     </style>
     <style name="Theme.Evepeeve.NoactinBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#00bfff</item>
+        <item name="colorPrimary">#318ce7</item>
         <item name="colorPrimaryVariant">#1E90FF</item>
         <item name="colorOnPrimary">#000087</item>
         <!-- Secondary brand color. this helps in button and loading screen -->
