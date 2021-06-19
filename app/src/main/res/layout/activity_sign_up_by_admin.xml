@@ -212,10 +212,10 @@
                     android:layout_marginTop="18dp"
                     android:layout_height="wrap_content">
                 <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
 
                     app:cardBackgroundColor="#318ce7"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     app:cardCornerRadius="50dp">
                     <TextView
                         android:layout_width="wrap_content"
