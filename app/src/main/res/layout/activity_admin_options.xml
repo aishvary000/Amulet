@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         tools:text="Soumya Goyal"
         android:layout_marginTop="15dp"
-
+        android:id="@+id/AdminHomePageName"
         android:textColor="@color/black"
         android:textSize="20dp"/>
 
@@ -87,6 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="19ucc067@lnmiit.ac.in"
+        android:id="@+id/AdminHomePageEmail"
         android:textColor="@color/black"
         android:textSize="15dp"/>
    </LinearLayout>

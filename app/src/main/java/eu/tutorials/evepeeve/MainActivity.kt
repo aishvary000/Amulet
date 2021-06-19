@@ -77,6 +77,7 @@ class MainActivity : BaseActivity() {
             if(item.designation == "Admin")
             {
                 val intent =  Intent(context,AdminOptions::class.java)
+                intent.putExtra("UserInfo",item)
                 context.startActivity(intent)
             }
         }

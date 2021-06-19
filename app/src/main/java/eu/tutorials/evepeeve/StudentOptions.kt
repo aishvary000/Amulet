@@ -16,6 +16,7 @@ class StudentOptions : AppCompatActivity() {
         val userInfo: Users? = intent.getParcelableExtra("UserInfo")
         if (userInfo != null) {
             loggedinStudentname.text = userInfo.name
+
         }
 
 
