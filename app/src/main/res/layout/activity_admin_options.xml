@@ -125,7 +125,6 @@
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#318ce7"
             app:cardCornerRadius="20dp"
-            android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
 
             >
@@ -158,7 +157,6 @@
             android:layout_height="wrap_content"
             app:cardBackgroundColor="#318ce7"
             app:cardCornerRadius="20dp"
-            android:layout_weight="1"
             android:layout_marginHorizontal="10dp"
             >
             <LinearLayout
