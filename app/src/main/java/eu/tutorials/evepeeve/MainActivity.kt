@@ -31,10 +31,6 @@ class MainActivity : BaseActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         Listeners()
-
-
-
-
     }
     private fun Listeners()
     {
