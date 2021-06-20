@@ -18,7 +18,6 @@
         <activity android:name=".Clubs" />
         <activity android:name=".StudentOptions" />
         <activity android:name=".AdminOptions" />
-        <activity android:name=".AdminLogin" />
         <activity android:name=".BaseActivity" />
         <activity android:name=".FacultySignup" />
         <activity android:name=".StudentSignup"
