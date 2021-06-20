@@ -131,7 +131,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_user"
+                    android:src="@drawable/ic_reading"
                     android:clickable="true"
                     android:onClick="test"/>
                 <TextView
@@ -139,7 +139,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
-                    android:text="Add Members"
+                    android:text="Club Admin"
                     android:textStyle="bold"
                     ></TextView>
 
@@ -158,18 +158,19 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="30dp">
+                android:padding="35dp">
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_eye"
+                    android:src="@drawable/ic_presentation"
                     android:clickable="true"
                     android:onClick="test"/>
                 <TextView
+                    android:layout_marginTop="10dp"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="View Member"
+                    android:text="Faculty"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     ></TextView>
