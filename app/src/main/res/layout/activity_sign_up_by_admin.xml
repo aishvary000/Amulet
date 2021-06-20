@@ -6,15 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".SignUpByAdmin"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1"
+        android:layout_weight="1"
         android:background="#318ce7"
         android:orientation="vertical"
         android:gravity="center"
@@ -26,15 +22,16 @@
             android:padding="25dp"
             android:background="@drawable/circle"/>
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#318ce7"
-            android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#318ce7"
+        android:orientation="vertical">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             app:cardCornerRadius="15dp"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -52,18 +49,24 @@
                         android:src="@drawable/ic_user"
                         android:scaleType="center"
                         />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:hint="User Name"
                         android:id="@+id/AdminSignUpUserNameField"
                         android:padding="7dp"
                         android:layout_height="wrap_content">
+
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:id="@+id/UserNameAdmin"
                             android:layout_height="match_parent">
+
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,22 +79,28 @@
                         android:src="@drawable/ic_email"
                         android:scaleType="center"
                         />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:hint="Email"
                         android:id="@+id/AdminSignUpEmailField"
                         android:padding="7dp"
                         android:layout_height="wrap_content">
+
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:id="@+id/emailAdmin"
                             android:layout_height="match_parent">
+
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
                     <ImageView
@@ -108,13 +117,18 @@
                         android:padding="7dp"
                         android:id="@+id/AdminSignDesignationField"
                         android:layout_height="wrap_content">
+
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:id="@+id/designationAdmin"
                             android:layout_height="match_parent"
                             >
+
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -127,6 +141,7 @@
                         android:src="@drawable/ic_password"
                         android:scaleType="center"
                         />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:hint="Password"
@@ -134,14 +149,19 @@
                         android:id="@+id/AdminSignUpPasswordField"
                         app:endIconMode="password_toggle"
                         android:layout_height="wrap_content">
+
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:inputType="textPassword"
                             android:id="@+id/passwordAdmin"
                             android:layout_height="match_parent"
                             >
+
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -174,14 +194,11 @@
 
                         </com.google.android.material.textfield.TextInputEditText>
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <!--            </androidx.cardview.widget.CardView>-->
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:layout_height="wrap_content">
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-
                     app:cardBackgroundColor="#318ce7"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="50dp">
@@ -198,9 +215,13 @@
                         android:onClick="signupAdmin"
                         android:padding="20dp"/>
                 </androidx.cardview.widget.CardView>
-                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-        </LinearLayout>
     </LinearLayout>
+
+
+
+
+
+
 </LinearLayout>
