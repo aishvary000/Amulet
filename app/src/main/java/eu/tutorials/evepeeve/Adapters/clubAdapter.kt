@@ -18,14 +18,19 @@ import eu.tutorials.evepeeve.R
 
 class clubAdapter(options: FirestoreRecyclerOptions<Clubs>) :FirestoreRecyclerAdapter<Clubs,clubAdapter.itemHolder>(
     options
-){
 
-    var firestore = FirebaseFirestore.getInstance()
+)
+
+{
+    private lateinit var  listener:onItemClickListener
+
+
     class itemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var clubName:TextView = itemView.findViewById<TextView>(R.id.clubname)
         var adminName:TextView = itemView.findViewById<TextView>(R.id.clubAdminName)
         var adminEmail:TextView = itemView.findViewById(R.id.clubAdminEmail)
+        var clubAdminInfo:TextView = itemView.findViewById(R.id.EditClubAdminInfo)
 
 
 
@@ -38,15 +43,24 @@ class clubAdapter(options: FirestoreRecyclerOptions<Clubs>) :FirestoreRecyclerAd
 
     override fun onBindViewHolder(holder: itemHolder, position: Int, model: Clubs) {
 
-        var clubsReference: Task<DocumentSnapshot> = firestore.collection("Users").document(model.uid).get()
-        clubsReference.addOnSuccessListener { it->
-            var item = it.toObject(Users::class.java)
-            if (item != null) {
-                holder.adminEmail.text = item.email
-                holder.adminName.text = item.name
-            }
-        }
+        holder.adminEmail.text = model.AdminEmail
+        holder.adminName.text = model.AdminName
         holder.clubName.text = model.clubName
+        var uid: String = model.uid
+        holder.clubAdminInfo.setOnClickListener {
+            if(position != RecyclerView.NO_POSITION && listener!=null)
+            {
+                listener.onItemClick(snapshots.getSnapshot(position),position)
+            }
+
+
+        }
+    }
+    public interface onItemClickListener{
+        fun onItemClick(documentSnapshot: DocumentSnapshot,position:Int)
+    }
+    public fun setOnItemClickListener(onItemClickListener: onItemClickListener){
+            this.listener = onItemClickListener
 
     }
 }

@@ -77,7 +77,7 @@
                 android:textSize="16sp"
                 android:layout_height="wrap_content"
                 android:text="Edit Info"
-                android:id="@+id/EditAdminInfo"
+                android:id="@+id/EditClubAdminInfo"
                 android:clickable="true"/>
         </LinearLayout>
         <View
