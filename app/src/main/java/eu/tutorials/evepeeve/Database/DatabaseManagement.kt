@@ -1,11 +1,14 @@
 package eu.tutorials.evepeeve.Database
 import android.content.Context
 import android.util.Log
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import eu.tutorials.evepeeve.*
+import eu.tutorials.evepeeve.Models.Clubs
 import eu.tutorials.evepeeve.Models.Users
 
 class DatabaseManagement:BaseActivity() {
@@ -23,7 +26,11 @@ class DatabaseManagement:BaseActivity() {
 
             }
     }
+    fun getClubs(): FirestoreRecyclerOptions<Clubs> {
+        var clubsReference:CollectionReference = firestore.collection("Clubs")
+        return FirestoreRecyclerOptions.Builder<Clubs>().setQuery(clubsReference,Clubs::class.java).build()
 
+    }
     fun registerStudentForAuthorization(userInfo: Users, activity: StudentSignup){
         firebaseAuth.createUserWithEmailAndPassword(userInfo.email, userInfo.password)
             .addOnSuccessListener { it ->

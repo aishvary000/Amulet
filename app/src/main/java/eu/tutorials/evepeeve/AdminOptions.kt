@@ -12,7 +12,7 @@ class AdminOptions : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_options)
-        var intent:Intent = intent
+        val intent:Intent = intent
         val userInfo: Users? = intent.getParcelableExtra("UserInfo")
         if(userInfo!=null)
         {
@@ -21,7 +21,7 @@ class AdminOptions : AppCompatActivity() {
         }
     }
     fun test(v:View){
-        val intent = Intent(this,SignUpByAdmin::class.java)
+        val intent = Intent(this,clubs_display::class.java)
         startActivity(intent)
     }
 }
