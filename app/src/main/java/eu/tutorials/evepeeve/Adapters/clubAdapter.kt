@@ -7,7 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
 import eu.tutorials.evepeeve.Models.Clubs
+import eu.tutorials.evepeeve.Models.Users
 import eu.tutorials.evepeeve.R
 
 
@@ -15,11 +20,12 @@ class clubAdapter(options: FirestoreRecyclerOptions<Clubs>) :FirestoreRecyclerAd
     options
 ){
 
-
+    var firestore = FirebaseFirestore.getInstance()
     class itemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var clubName:TextView = itemView.findViewById<TextView>(R.id.clubname)
         var adminName:TextView = itemView.findViewById<TextView>(R.id.clubAdminName)
+        var adminEmail:TextView = itemView.findViewById(R.id.clubAdminEmail)
 
 
 
@@ -31,7 +37,16 @@ class clubAdapter(options: FirestoreRecyclerOptions<Clubs>) :FirestoreRecyclerAd
     }
 
     override fun onBindViewHolder(holder: itemHolder, position: Int, model: Clubs) {
-        holder.adminName.text = model.AdminName
+
+        var clubsReference: Task<DocumentSnapshot> = firestore.collection("Users").document(model.uid).get()
+        clubsReference.addOnSuccessListener { it->
+            var item = it.toObject(Users::class.java)
+            if (item != null) {
+                holder.adminEmail.text = item.email
+                holder.adminName.text = item.name
+            }
+        }
         holder.clubName.text = model.clubName
+
     }
 }

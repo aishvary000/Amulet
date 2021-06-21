@@ -15,8 +15,10 @@ class clubs_display : AppCompatActivity() {
     private lateinit var ClubAdapter:clubAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_clubs_display)
         setUpClubList()
+
     }
     fun setUpClubList(){
         var Clubs: FirestoreRecyclerOptions<Clubs> = DatabaseManagement().getClubs()
