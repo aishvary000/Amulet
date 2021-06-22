@@ -33,9 +33,7 @@ class clubs_display : AppCompatActivity() {
             override fun onItemClick(documentSnapshot: DocumentSnapshot, position: Int) {
                 var id:String = documentSnapshot.id
                 var clubInfo: Clubs? = documentSnapshot.toObject(eu.tutorials.evepeeve.Models.Clubs::class.java)
-                if (clubInfo != null) {
-                    Toast.makeText(this@clubs_display,"Position : $position AdminName : ${clubInfo.AdminName} Uid : $id",Toast.LENGTH_LONG).show()
-                }
+                //code for intent
             }
 
         })

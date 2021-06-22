@@ -103,7 +103,9 @@ class DatabaseManagement:BaseActivity() {
 
             }
     }
+    fun updateAdminClubInfo(){
 
+    }
 
 
 
