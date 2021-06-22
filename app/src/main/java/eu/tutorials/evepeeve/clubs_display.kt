@@ -1,5 +1,6 @@
 package eu.tutorials.evepeeve
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -33,7 +34,11 @@ class clubs_display : AppCompatActivity() {
             override fun onItemClick(documentSnapshot: DocumentSnapshot, position: Int) {
                 var id:String = documentSnapshot.id
                 var clubInfo: Clubs? = documentSnapshot.toObject(eu.tutorials.evepeeve.Models.Clubs::class.java)
-                //code for intent
+                val intent = Intent(this@clubs_display,ClubAdminEditInfo::class.java)
+                intent.putExtra("doc id",id)
+                startActivity(intent)
+
+
             }
 
         })
