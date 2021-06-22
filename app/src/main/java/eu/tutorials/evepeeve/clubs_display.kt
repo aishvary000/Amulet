@@ -7,7 +7,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
 import eu.tutorials.evepeeve.Adapters.clubAdapter
 import eu.tutorials.evepeeve.Database.DatabaseManagement
 import eu.tutorials.evepeeve.Models.Clubs
@@ -34,10 +36,21 @@ class clubs_display : AppCompatActivity() {
                 var id:String = documentSnapshot.id
                 var clubInfo: Clubs? = documentSnapshot.toObject(eu.tutorials.evepeeve.Models.Clubs::class.java)
                 //code for intent
-            }
+                val firestore = FirebaseFirestore.getInstance()
+                var docRef:DocumentReference = firestore.collection("Clubs").document(id)
+                val map:HashMap<String,Any> = HashMap()
 
-        })
+                docRef.update(map).addOnSuccessListener {
+                    Toast.makeText(this@clubs_display,"Updated",Toast.LENGTH_SHORT).show()
+                }
+                    .addOnFailureListener {
+                        Toast.makeText(this@clubs_display,it.toString(),Toast.LENGTH_SHORT).show()
+                    }
 
+
+        }
+
+    })
     }
 
     override fun onStart() {
