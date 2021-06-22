@@ -36,6 +36,8 @@ class clubs_display : AppCompatActivity() {
                 var clubInfo: Clubs? = documentSnapshot.toObject(eu.tutorials.evepeeve.Models.Clubs::class.java)
                 val intent = Intent(this@clubs_display,ClubAdminEditInfo::class.java)
                 intent.putExtra("doc id",id)
+                intent.putExtra("AdminName",clubInfo?.name)
+                intent.putExtra("AdminEmail",clubInfo?.email)
                 startActivity(intent)
 
 

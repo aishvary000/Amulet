@@ -43,8 +43,8 @@ class clubAdapter(options: FirestoreRecyclerOptions<Clubs>) :FirestoreRecyclerAd
 
     override fun onBindViewHolder(holder: itemHolder, position: Int, model: Clubs) {
 
-        holder.adminEmail.text = model.AdminEmail
-        holder.adminName.text = model.AdminName
+        holder.adminEmail.text = model.email
+        holder.adminName.text = model.name
         holder.clubName.text = model.clubName
         var uid: String = model.uid
         holder.clubAdminInfo.setOnClickListener {

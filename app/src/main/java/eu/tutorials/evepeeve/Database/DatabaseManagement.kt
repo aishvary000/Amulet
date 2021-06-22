@@ -16,6 +16,7 @@ class DatabaseManagement:BaseActivity() {
 
     private val firestore = FirebaseFirestore.getInstance()
     private val firebaseAuth = FirebaseAuth.getInstance()
+    private var userId:String = ""
     fun registerStudentInFirestore(userInfo: Users, activity: StudentSignup) {
         firestore.collection(eu.tutorials.evepeeve.utils.Constants.studentsDb).document(userInfo.id)
             .set(userInfo, SetOptions.merge())
@@ -104,9 +105,10 @@ class DatabaseManagement:BaseActivity() {
 
             }
     }
-    fun updateAdminClubInfo(context: Context,id:String,newAdminName:String,newAdminEmail:String){
+    fun updateAdminClubInfo(context: Context,id:String,newAdminName:String,newAdminEmail:String,activity:ClubAdminEditInfo){
         var docRefClubs:CollectionReference = firestore.collection("Clubs")
         var clubName:String = ""
+        firestore.collection("users").document(id).delete()
         docRefClubs.document(id).get()
             .addOnSuccessListener {
                 if(it!=null) {
@@ -116,76 +118,104 @@ class DatabaseManagement:BaseActivity() {
                     }
                 }
             }
-        docRefClubs.document(id).delete()
-            .addOnSuccessListener {
-                Log.e("This" , "Deleted")
-            }
+
         //checking for any document with email id as new email id
-        var userId:String? = checkExistingUserWithEmailId(newAdminEmail)
-        if(userId == null) {
-            //registering for new user
-
-            firebaseAuth.createUserWithEmailAndPassword(newAdminEmail,"qwertyuiop")
-                .addOnSuccessListener {
-                    var user:Users = Users(name = newAdminName,email = newAdminEmail,designation = "clubAdmin")
-                    val firebase: FirebaseUser? = it.user
-                    if (firebase != null) {
-                        user.id = firebase.uid
-                        userId = user.id
-                    }
-                    //registering in users collection
-                    firestore.collection("Users").document(user.id).set(user).addOnSuccessListener {
-                        Log.e("this ","New User Registration Successful")
-                    }
-
-
-                }
-                .addOnFailureListener {
-                    Log.e("this ","New User Registration Failed")
-                }
-
-
-        }
-
-
-        //registering in clubs collection
-        var collectionReference:CollectionReference = firestore.collection("Clubs")
-        if(userId!=null)
-        {
-            collectionReference.document(userId!!).set(Clubs(clubName = clubName,AdminName = newAdminName,AdminEmail = newAdminEmail,uid = userId!!)).addOnSuccessListener {
-                Log.e("this","All set")
-            }
-                .addOnFailureListener {
-                    Log.e("This ","Error here")
-                }
-        }
-
-
-
-
-
-
-
-    }
-    fun checkExistingUserWithEmailId(email:String): String? {
-        var collectionReference:CollectionReference = firestore.collection("Users")
-        var id:String? = null
-        collectionReference.whereEqualTo("email",email)
+        var collectionReferenceUsers:CollectionReference = firestore.collection("Users")
+        collectionReferenceUsers.whereEqualTo("email",newAdminEmail)
             .get()
-            .addOnSuccessListener {documents->
-                for(document in documents){
-                   id = document.id
-                   }
+            .addOnSuccessListener { documents ->
+                if (documents != null) {
+                    for (document in documents) {
+                        userId = document.id
+                    }
+                    if (userId == "") {
+                        Log.e("This user not found","User Not")
+                        firebaseAuth.createUserWithEmailAndPassword(newAdminEmail, "qwertyuiop")
+                            .addOnSuccessListener {
+                                var user: Users = Users(
+                                    name = newAdminName,
+                                    email = newAdminEmail,
+                                    designation = "clubAdmin"
+                                )
+                                val firebase: FirebaseUser? = it.user
+                                if (firebase != null) {
+                                    Log.e("uid ", firebase.uid)
+                                    user.id = firebase.uid
+
+                                }
+                                //registering in users collection
+                                firestore.collection("Users").document(user.id).set(user)
+                                    .addOnSuccessListener {
+                                        userId = user.id
+                                        Log.e("this ", "New User Registration Successful $userId")
+                                        Log.e("Here ", userId)
+                                        docRefClubs.document(userId).set(
+                                            Clubs(
+                                                clubName = clubName,
+                                                name = newAdminName,
+                                                email = newAdminEmail,
+                                                uid = userId
+                                            )
+                                        ).addOnSuccessListener {
+                                            docRefClubs.document(id).delete()
+                                            activity.showSucessToast("Update Successful")
+                                        }
+
+                                    }
+                                    .addOnFailureListener {
+                                        activity.showError("Failed")
+                                    }
+                            }
+
+
+                    }
+                    else
+                    {
+                        Log.e("What ", userId)
+                        var map: HashMap<String, Any> = HashMap()
+                        map["designation"] = "clubAdmin"
+                        firestore.collection("Users").document(userId).update(map)
+                            .addOnFailureListener {
+                                Log.e("Here ", it.toString())
+                            }
+                            .addOnSuccessListener {
+                                docRefClubs.document(id).delete()
+                                    .addOnSuccessListener {
+                                        Log.e("This", "Deleted")
+                                        docRefClubs.document(userId).set(
+                                            Clubs(
+                                                clubName = clubName,
+                                                name = newAdminName,
+                                                email = newAdminEmail,
+                                                uid = userId
+                                            )
+                                        ).addOnSuccessListener {
+                                            activity.showSucessToast("Update Successful")
+                                        }
+                                            .addOnFailureListener {
+                                                activity.showError("Failed")
+                                            }
+                                    }
+
+
+                            }
+                    }
                 }
-
-            return  id
             }
-
-    fun updateUserInfo(id:String,map:HashMap<String,Any>){
-
+            .addOnFailureListener {
+                                activity.showError(it.toString())
+            }
 
 
     }
+
+
+
+
+
+
+
+
 }
 
 

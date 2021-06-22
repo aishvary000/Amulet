@@ -1,8 +1,8 @@
 package eu.tutorials.evepeeve.Models
 data class Clubs (
     var clubName:String = "",
-    var AdminName:String ="",
-    var AdminEmail:String ="",
+    var name:String ="",
+    var email:String ="",
     var uid:String = ""
 
 
