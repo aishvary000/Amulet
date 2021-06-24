@@ -1,11 +1,11 @@
-package eu.tutorials.evepeeve
+package eu.tutorials.evepeeve.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import eu.tutorials.evepeeve.Models.Users
+import eu.tutorials.evepeeve.R
 import kotlinx.android.synthetic.main.activity_admin_options.*
 
 class AdminOptions : AppCompatActivity() {
@@ -21,7 +21,7 @@ class AdminOptions : AppCompatActivity() {
         }
     }
     fun test(v:View){
-        val intent = Intent(this,clubs_display::class.java)
+        val intent = Intent(this, clubs_display::class.java)
         startActivity(intent)
     }
 }

@@ -1,11 +1,11 @@
-package eu.tutorials.evepeeve
+package eu.tutorials.evepeeve.screens
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.google.firebase.firestore.auth.User
 import eu.tutorials.evepeeve.Models.Users
+import eu.tutorials.evepeeve.R
 import kotlinx.android.synthetic.main.activity_student_options.*
 
 class StudentOptions : AppCompatActivity() {
@@ -22,11 +22,11 @@ class StudentOptions : AppCompatActivity() {
 
     }
     fun clubs_page(v: View){
-        val intent = Intent(this,Clubs::class.java)
+        val intent = Intent(this, Clubs::class.java)
         startActivity(intent)
     }
     fun classroom_page(v:View){
-        val intent = Intent(this,Classroom::class.java)
+        val intent = Intent(this, Classroom::class.java)
         startActivity(intent)
 
     }

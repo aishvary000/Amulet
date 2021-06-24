@@ -1,21 +1,17 @@
-package eu.tutorials.evepeeve
+package eu.tutorials.evepeeve.screens
 
-import android.app.Activity
 import android.app.Dialog
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageButton
 import android.widget.Toast
 import com.google.firebase.firestore.DocumentSnapshot
 import eu.tutorials.evepeeve.Database.DatabaseManagement
 import eu.tutorials.evepeeve.Models.Users
-import kotlinx.android.synthetic.main.activity_faculty_signup.*
+import eu.tutorials.evepeeve.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.custom_progress_bar.*
 import kotlinx.android.synthetic.main.custom_toast.*
@@ -49,7 +45,7 @@ class MainActivity : BaseActivity() {
         }
     }
     fun student_signup(v:View){
-        val intent = Intent(this,StudentSignup::class.java)
+        val intent = Intent(this, StudentSignup::class.java)
         startActivity(intent)
     }
 //    fun ErrorToast(message:String)
@@ -69,14 +65,14 @@ class MainActivity : BaseActivity() {
         if (item != null) {
             if(item.designation == "Student")
             {
-                    val intent =  Intent(context,StudentOptions::class.java)
+                    val intent =  Intent(context, StudentOptions::class.java)
                     intent.putExtra("UserInfo",item)
                     //intent.putExtras(item)
                     context.startActivity(intent)
             }
             if(item.designation == "Admin")
             {
-                val intent =  Intent(context,AdminOptions::class.java)
+                val intent =  Intent(context, AdminOptions::class.java)
                 intent.putExtra("UserInfo",item)
                 context.startActivity(intent)
             }

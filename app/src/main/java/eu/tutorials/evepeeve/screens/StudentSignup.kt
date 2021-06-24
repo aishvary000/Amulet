@@ -1,4 +1,4 @@
-package eu.tutorials.evepeeve
+package eu.tutorials.evepeeve.screens
 
 import android.os.Bundle
 import android.view.Gravity
@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import eu.tutorials.evepeeve.Models.Users
 import eu.tutorials.evepeeve.Database.DatabaseManagement
+import eu.tutorials.evepeeve.R
 import kotlinx.android.synthetic.main.activity_student_signup.*
 import kotlinx.android.synthetic.main.custom_toast.*
 import kotlinx.android.synthetic.main.custom_toast.view.*

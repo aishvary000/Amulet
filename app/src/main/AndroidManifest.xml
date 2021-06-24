@@ -11,21 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Evepeeve.NoactinBar">
-        <activity android:name=".ClubAdminEditInfo"></activity>
+        <activity android:name=".screens.ClubAdminEditInfo"></activity>
 
-        <activity android:name=".clubs_display" />
+        <activity android:name=".screens.clubs_display" />
         <activity
-            android:name=".SignUpByAdmin"
+            android:name=".screens.SignUpByAdmin"
             android:theme="@style/Theme.Evepeeve.NoactinBar" />
-        <activity android:name=".Classroom" />
-        <activity android:name=".Clubs" />
-        <activity android:name=".StudentOptions" />
-        <activity android:name=".AdminOptions" />
-        <activity android:name=".BaseActivity" />
-        <activity android:name=".FacultySignup" />
-        <activity android:name=".StudentSignup" />
+        <activity android:name=".screens.Classroom" />
+        <activity android:name=".screens.Clubs" />
+        <activity android:name=".screens.StudentOptions" />
+        <activity android:name=".screens.AdminOptions" />
+        <activity android:name=".screens.BaseActivity" />
+        <activity android:name=".screens.FacultySignup" />
+        <activity android:name=".screens.StudentSignup" />
         <activity
-            android:name=".MainActivity"
+            android:name=".screens.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Evepeeve.NoactinBar"
             android:windowSoftInputMode="adjustResize">

@@ -1,8 +1,7 @@
-package eu.tutorials.evepeeve
+package eu.tutorials.evepeeve.screens
 
 import android.app.Dialog
 import android.content.Intent
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,10 +9,8 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.type.TimeOfDay
 import eu.tutorials.evepeeve.Database.DatabaseManagement
-import eu.tutorials.evepeeve.Models.Clubs
+import eu.tutorials.evepeeve.R
 import kotlinx.android.synthetic.main.activity_club_admin_edit_info.*
 import kotlinx.android.synthetic.main.custom_progress_bar.*
 import kotlinx.android.synthetic.main.custom_toast.*
@@ -31,7 +28,7 @@ class ClubAdminEditInfo : AppCompatActivity() {
         var adminName:String?= intent.getStringExtra("AdminName")
         var adminEmail:String?= intent.getStringExtra("AdminEmail")
         setContentView(R.layout.activity_club_admin_edit_info)
-        Log.e("Info : ","adminName : $adminName, adminEmail : $adminEmail")
+        Log.e("Info : ","adminName : $adminName, adminEmail : $adminEmail, clubName : $clubName")
         clubEditInfoClubName.text = clubName
         clubEditInfoClubAdminCurrentName.text = adminName
         newAdminSaveChanges.setOnClickListener {

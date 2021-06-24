@@ -1,19 +1,15 @@
 package eu.tutorials.evepeeve.Database
-import android.app.Activity
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.*
-import com.google.firebase.firestore.auth.User
-import eu.tutorials.evepeeve.*
 import eu.tutorials.evepeeve.Models.Clubs
 import eu.tutorials.evepeeve.Models.Users
+import eu.tutorials.evepeeve.screens.*
 
-class DatabaseManagement:BaseActivity() {
+class DatabaseManagement: BaseActivity() {
 
     private val firestore = FirebaseFirestore.getInstance()
     private val firebaseAuth = FirebaseAuth.getInstance()
@@ -179,7 +175,7 @@ class DatabaseManagement:BaseActivity() {
 
     }
 
-    fun lookForEmail(email: String,activity: ClubAdminEditInfo,docId:String){
+    fun lookForEmail(email: String, activity: ClubAdminEditInfo, docId:String){
             var document:String = ""
             fireStoreUser.whereEqualTo("email",email).get().addOnSuccessListener { documents->
                 if(documents.isEmpty)
@@ -205,7 +201,7 @@ class DatabaseManagement:BaseActivity() {
 
 
             }
-    fun checkForUserDesignation(userId:String,activity: ClubAdminEditInfo,clubId:String){
+    fun checkForUserDesignation(userId:String, activity: ClubAdminEditInfo, clubId:String){
 
         fireStoreUser.document(userId).get()
             .addOnSuccessListener {

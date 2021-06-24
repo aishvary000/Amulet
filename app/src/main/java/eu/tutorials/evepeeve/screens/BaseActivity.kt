@@ -1,24 +1,17 @@
-package eu.tutorials.evepeeve
+package eu.tutorials.evepeeve.screens
 
-import android.app.Activity
-import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
+import eu.tutorials.evepeeve.R
 import kotlinx.android.synthetic.main.activity_sign_up_by_admin.*
 import kotlinx.android.synthetic.main.activity_student_signup.*
-import kotlinx.android.synthetic.main.custom_progress_bar.*
-import kotlinx.android.synthetic.main.custom_toast.*
 
 open class BaseActivity : AppCompatActivity() {
 

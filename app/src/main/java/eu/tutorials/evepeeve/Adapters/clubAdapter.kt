@@ -35,7 +35,6 @@ class clubAdapter(options: FirestoreRecyclerOptions<Clubs>) :FirestoreRecyclerAd
 
 
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemHolder {
         var v:View = LayoutInflater.from(parent.context).inflate(R.layout.club_item,parent,false)
         return itemHolder(v)
@@ -46,7 +45,6 @@ class clubAdapter(options: FirestoreRecyclerOptions<Clubs>) :FirestoreRecyclerAd
         holder.adminEmail.text = model.email
         holder.adminName.text = model.name
         holder.clubName.text = model.clubName
-        var uid: String = model.uid
         holder.clubAdminInfo.setOnClickListener {
             if(position != RecyclerView.NO_POSITION && listener!=null)
             {
