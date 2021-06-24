@@ -55,7 +55,6 @@ class DatabaseManagement:BaseActivity() {
                 Log.e("this", it.toString())
             }
     }
-
     fun loginAdmin(email: String, password: String, context: Context, activity: MainActivity) {
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -82,7 +81,6 @@ class DatabaseManagement:BaseActivity() {
 
 
     }
-
     fun registerAdminForAuthorization(userInfo: Users, activity: SignUpByAdmin) {
         firebaseAuth.createUserWithEmailAndPassword(userInfo.email, userInfo.password)
             .addOnSuccessListener { it ->

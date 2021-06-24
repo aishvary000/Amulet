@@ -26,8 +26,8 @@ class ClubAdminEditInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val  intent:Intent = intent
-        val id: String? = intent.getStringExtra("doc id")
-        val clubName:String?= intent.getStringExtra("clubName")
+        var id: String? = intent.getStringExtra("doc id")
+        var clubName:String?= intent.getStringExtra("clubName")
         var adminName:String?= intent.getStringExtra("AdminName")
         var adminEmail:String?= intent.getStringExtra("AdminEmail")
         setContentView(R.layout.activity_club_admin_edit_info)
