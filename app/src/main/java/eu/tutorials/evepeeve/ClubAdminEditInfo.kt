@@ -5,6 +5,7 @@ import android.content.Intent
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -25,20 +26,36 @@ class ClubAdminEditInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val  intent:Intent = intent
-        var id: String? = intent.getStringExtra("doc id")
+        val id: String? = intent.getStringExtra("doc id")
+        val clubName:String?= intent.getStringExtra("clubName")
+        var adminName:String?= intent.getStringExtra("AdminName")
+        var adminEmail:String?= intent.getStringExtra("AdminEmail")
         setContentView(R.layout.activity_club_admin_edit_info)
+        Log.e("Info : ","adminName : $adminName, adminEmail : $adminEmail")
+        clubEditInfoClubName.text = clubName
+        clubEditInfoClubAdminCurrentName.text = adminName
         newAdminSaveChanges.setOnClickListener {
-            if(id!=null) {
-                if(newAdminEmailText.text.toString() == "")
-                {
-                    Toast.makeText(this,"Both Fileds Are required",Toast.LENGTH_SHORT).show()
-                }
-                else
-                {
-                    showProgressDialog("Update in progress")
-                    DatabaseManagement().lookForEmail(newAdminEmailText.text.toString(),this,id)
-                }
+            if(newAdminSaveChanges.text == "Register")
+            {
+                showProgressDialog("Please Wait Registering")
+                DatabaseManagement().createUserwithPriviledges(newAdminNameText.text.toString(),newAdminEmailText.text.toString(),newAdminPasswordText.text.toString(),"clubAdmin",this,id!!)
+                Log.e("I comme heree","here")
 
+            }
+            else if(newAdminSaveChanges.text == "Save Changes") {
+                if (id != null) {
+                    if (newAdminEmailText.text.toString() == "") {
+                        Toast.makeText(this, "Both Fileds Are required", Toast.LENGTH_SHORT).show()
+                    } else {
+                        showProgressDialog("Update in progress")
+                        DatabaseManagement().lookForEmail(
+                            newAdminEmailText.text.toString(),
+                            this,
+                            id
+                        )
+                    }
+
+                }
             }
         }
 
@@ -53,19 +70,20 @@ class ClubAdminEditInfo : AppCompatActivity() {
            Toast.makeText(this,"User Not Found try registering First",Toast.LENGTH_LONG).show()
            if(newAdminNameVisibilty.visibility != View.VISIBLE)
                 newAdminNameVisibilty.visibility = View.VISIBLE
-           if(clubNameVisibilty.visibility != View.VISIBLE)
-               clubNameVisibilty.visibility = View.VISIBLE
            if(paswordFieldVisibilty.visibility != View.VISIBLE)
                 paswordFieldVisibilty.visibility = View.VISIBLE
-           //setting clubName according to the docId captured
-           FirebaseFirestore.getInstance().collection("Clubs").document(docId).get()
-               .addOnSuccessListener {
-                   val item:Clubs? = it.toObject(Clubs::class.java)
-                   if (item != null) {
-                       clubNameText.setText(item.clubName)
-                       clubNameText.isEnabled = false
-                   }
-               }
+           //changing save changes text to register
+           newAdminSaveChanges.text = "Register"
+
+
+
+
+       }
+        else {
+            //user has been found then we will check if user is already a faculty or admin then we will
+                //throw a error
+                    Log.e("Found User : ",info)
+            DatabaseManagement().checkForUserDesignation(info,this,docId)
 
        }
     }

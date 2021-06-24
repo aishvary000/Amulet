@@ -58,6 +58,7 @@
             android:layout_height="wrap_content"
             tools:text="CAPRICCIO"
             android:gravity="center"
+            android:id="@+id/clubEditInfoClubName"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="25dp"
@@ -68,6 +69,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             tools:text="Aishvary Singh"
+            android:id="@+id/clubEditInfoClubAdminCurrentName"
             android:textColor="@color/black"
             android:textSize="17dp"
             />
@@ -235,7 +237,7 @@
                 <!--                android:layout_marginLeft="10dp">-->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:hint="Admin Name"
+                    android:hint="Password"
                     android:padding="7dp"
 
                     android:id="@+id/newAdminPassWordField"
@@ -269,70 +271,6 @@
 
             </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="invisible"
-            android:id="@+id/clubNameVisibilty"
-            android:gravity="center">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="4"
-                android:paddingLeft="30dp"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_user"
-                    android:scaleType="center"
-                    />
-                <!--            <androidx.cardview.widget.CardView-->
-
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_marginStart="10dp"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:cardCornerRadius="20dp"-->
-                <!--                android:layout_marginLeft="10dp">-->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:hint="Admin Name"
-                    android:padding="7dp"
-                    android:id="@+id/clubNameField"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_height="wrap_content">
-
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:id="@+id/clubNameText"
-                        android:layout_height="match_parent"
-                        >
-
-                    </com.google.android.material.textfield.TextInputEditText>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <!--            </androidx.cardview.widget.CardView>-->
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                >
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_pen"
-                    />
-
-            </LinearLayout>
-        </LinearLayout>
-
         <LinearLayout
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
